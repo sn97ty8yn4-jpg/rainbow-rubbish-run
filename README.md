@@ -1,29 +1,37 @@
-# Rainbow Rubbish Run — Living Town v4.1: Sorting School
+# Rainbow Rubbish Run — Living Town v4.2: Sorting Adventure
 
-**Playable offline HTML game for Felix, Nora and Ferg (ages 3–5).** Open [index.html](./index.html) in a browser to play. No network assets, account or game installation is required.
+A standalone, offline Australian garbage-truck game for Felix, Nora and Ferg (approximately ages 3–5).
 
-## Latest features
+## Play
+Download or open `index.html` in Chrome, Edge or Safari. The complete playable 3D model cache is embedded in the HTML; no external packages, online services or GTA assets are necessary.
 
-- All jobs now use a preschool-friendly rubbish-sorting mini-game. The old timing, latch and other reflex puzzles have been replaced.
-- **92 illustrated items**: 24 food scraps, 24 recycling, 20 garden waste, 24 general rubbish. Colours and pictures are prominent; speech cues are optional.
-- **Left/right arrows** choose one of four colour-coded bins; **SPACE** drops the object. Unlimited retries, gentle clues, no countdown.
-- Ferg begins with 2 objects per job; Felix and Nora get 3. New shifts increase difficulty slightly.
-- Three individually authored Australian side-loader truck variants: Felix Blue Recycler, Nora Unicorn Express and Ferg Dino Collector. The online repository's standalone HTML contains the baked vehicle and town geometry.
-- Detailed original Australian town scenery, expanded tree cover, kerbside bins, collision-checked houses and shops, GPS, pedestrians, traffic and landmarks.
-- 24 scheduled stops per shift, three players taking eight turns each; the route continues into new shifts and the depot is repeatable.
+- ↑ drive; ↓ brake/reverse; ←/→ steer.
+- SPACE start a job, sort an item, or continue a turn.
+- On phones, use the large onscreen controls.
+- Guided/free steering and voice prompts are available where the browser supports them.
 
-## Controls
+## Every job teaches rubbish sorting
+All mini-games use four large pictured sorting bins: **🍎 FOOD**, **♻️ RECYCLING**, **🍃 GARDEN**, **🗑️ GENERAL RUBBISH**.
 
-**↑ accelerate · ↓ brake/reverse · ←→ steer · SPACE work, sort, hand off.** Touch buttons are included.
+There are **134 teaching items**, split food 34, recycling 36, garden 30 and general 34. Sorting sessions are 2 pictures for Ferg and 3 for Felix/Nora; later shifts add one extra. Arrows select the bin, SPACE drops the item. Helpful clues and unlimited retries are built in.
 
-## Test status
+Each player saves correct answers, mistakes, best streaks and a 🏅 sticker for five correct answers in a row.
 
-Chromium automation validated a complete **76-job** sample across four shifts, sorting retries, the hydraulic collection animation, mobile 4-bin layout and zero detected JavaScript exceptions. Job progression was tested by positioning the truck at individual stops; it was not a manually driven full route. iPhone GPU performance and speech voices remain unverified.
+**Educational simplification:** real council rules (including FOGO) vary. Follow the real labels and council rules where you live.
 
-## Educational limitation
+## Three articulated truck models
+- Felix: blue/green Recycler.
+- Nora: teal/purple Unicorn Express.
+- Ferg: orange/green Dino Collector.
 
-These are deliberately simplified educational sorting streams. **Real Australian council rules vary**, particularly FOGO services that combine food and garden waste. Follow your local council's instructions for actual household collection.
+The original authored GLB files, prefabs and material atlases are supplied in the downloadable project archive. The standalone HTML embeds derived 3D vertex data and animates wheels, side-loader and tailgate.
 
-## Engineering limitation
+## Town and jobs
+24 jobs per shift, rotating evenly between the three children. Continuing shifts, repeated depot unloading when the truck fills, Australian-style houses, trees, fences, bins, traffic and wildlife. Modelled house and shop collision footprints, colour-coded roadside bins, large pictured navigation cues and a camera that tries to avoid roofs.
 
-The shipped game uses original authored, stylised assets and baked GLB geometry in a custom WebGL/software renderer. It is **not GTA San Andreas** and does not yet contain a fully integrated Rapier physics engine or full PBR textures. The complete offline game ZIP, separately importable GLBs and regeneration scripts are distributed in the ChatGPT project release.
+## Realism and test limitations
+This is an original stylised game, not GTA San Andreas or a full Rapier rigid-body engine. Vehicle handling uses a custom approximation and the hydraulic arm is kinematically animated. WebGL can fall back to a slower software rasteriser.
+
+Chromium automated checks pass, including **96 scripted jobs across four shifts**, four visible phone bin buttons, sticker earning, save/restore of learning stats, an incorrect-answer hint and no detected JS exceptions. Scripted jobs place the truck at the destination; the full driving route and iPhone hardware performance require hands-on testing.
+
+The expanded GLB source, test scripts, screenshots and full instructions are in the downloadable Living Town v4.2 package shared in ChatGPT.
