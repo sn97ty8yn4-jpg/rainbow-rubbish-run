@@ -1,4 +1,4 @@
-<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Rainbow Rubbish Run — Living Town v4.2 Sorting Adventure</title><style>
+<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Rainbow Rubbish Run — Hydraulic Realism v4.3 Sorting Adventure</title><style>
 :root{--ink:#1b4556;--sun:#ffe17b;--green:#56c7a1}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#80c7e8;color:var(--ink);font-family:ui-rounded,'Trebuchet MS',system-ui,sans-serif;touch-action:none;user-select:none}#game{position:fixed;inset:0;width:100%;height:100%;display:block}#fade{position:fixed;inset:0;pointer-events:none;background:linear-gradient(180deg,#52b7e821,transparent 35%,#122e4e1d);z-index:1}#worldLabels{position:fixed;inset:0;pointer-events:none;z-index:3}.worldLabel{position:absolute;transform:translate(-50%,-50%);padding:5px 11px;border:2px solid white;background:#fffbe7ef;border-radius:18px;white-space:nowrap;font-weight:1000;font-size:clamp(12px,1.6vw,16px);box-shadow:0 4px 8px #153d4c33;display:none}#hud{display:none;position:fixed;z-index:4;inset:0;pointer-events:none}#top{position:absolute;left:14px;top:12px;border:3px solid white;background:#fffcf4ee;padding:8px 14px;border-radius:20px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 18px #21566932;max-width:min(480px,65vw)}#who{width:47px;height:47px;background:#d4f0ef;display:grid;place-items:center;border-radius:15px;font-size:31px}#playerName{font-size:22px;font-weight:1000}#dayName{font-size:12px;font-weight:900;color:#608089}#mission{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:#fffceced;border:3px solid white;padding:8px 14px;border-radius:19px;font-weight:1000;text-align:center;min-width:210px;max-width:26vw;box-shadow:0 8px 18px #21566926}#mission strong{display:block;font-size:16px}#mission small{display:block;font-size:12px}#topRight{position:absolute;right:13px;top:12px;display:flex;gap:7px;pointer-events:auto}#topRight button{border:2px solid white;border-radius:13px;background:#fffef4e8;color:#274c59;padding:10px 12px;font:900 14px ui-rounded,system-ui;cursor:pointer;min-height:44px;box-shadow:0 5px 10px #17445a25}#instrument{position:absolute;left:15px;top:88px;display:flex;gap:6px;flex-wrap:wrap;max-width:63vw}#instrument span{background:#fffef0e9;border:2px solid white;border-radius:12px;font-size:13px;font-weight:1000;padding:5px 9px;box-shadow:0 2px 9px #233d5027}#mapWrap{position:absolute;right:13px;top:69px;width:183px;height:183px;background:#fff9e9dd;border:4px solid #fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #17445235}#map{width:100%;height:100%}#centerMessage{position:absolute;bottom:132px;left:50%;transform:translateX(-50%);background:#fffdf0f2;border:3px solid white;border-radius:21px;padding:9px 18px;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis;text-align:center;font-size:clamp(15px,2.1vw,25px);font-weight:1000;box-shadow:0 7px 20px #1b385d31}#toast{position:absolute;left:50%;top:24%;transform:translateX(-50%) scale(.94);border:4px solid white;border-radius:24px;background:#ffefbaf5;padding:12px 25px;font-size:clamp(17px,2.6vw,27px);font-weight:1000;text-align:center;opacity:0;transition:opacity .15s,transform .15s;box-shadow:0 10px 25px #183a4d33;max-width:85vw}#toast.show{opacity:1;transform:translateX(-50%) scale(1)}#bottom{position:absolute;left:15px;right:15px;bottom:15px;display:flex;justify-content:space-between;align-items:end;gap:10px}#dpad{display:grid;grid-template-columns:repeat(3,59px);grid-template-rows:repeat(2,59px);gap:5px;pointer-events:auto}#dpad button{border:3px solid white;border-radius:18px;background:#fffdf3df;font-weight:1000;font-size:32px;color:#235165;cursor:pointer;box-shadow:inset 0 -5px #234a631c,0 7px 12px #16394e27;touch-action:none}#dpad button.pressed,#space.pressed{background:#b6f2c3;transform:translateY(3px)}#up{grid-column:2;grid-row:1;background:#fff0a7!important}#left{grid-column:1;grid-row:2}#down{grid-column:2;grid-row:2}#right{grid-column:3;grid-row:2}#action{display:flex;flex-direction:column;align-items:end;gap:6px;pointer-events:auto}#action small{border:2px solid white;background:#ffffe9e8;border-radius:12px;padding:6px 10px;font-size:12px;font-weight:1000;text-align:right}#space{min-width:min(35vw,200px);height:82px;border-radius:24px;border:5px solid white;background:#ffd76b;color:#5c4417;font-size:24px;font-weight:1000;box-shadow:inset 0 -8px #eab84c,0 8px 19px #5a391e33;touch-action:none;cursor:pointer}#puzzle{display:none;position:absolute;top:23%;left:50%;transform:translateX(-50%);width:min(580px,91vw);border:5px solid white;border-radius:28px;background:#fffcf2f5;padding:18px;text-align:center;box-shadow:0 16px 36px #25445d47}#puzzle.show{display:block}.puzzleTitle{font-size:clamp(20px,3.7vw,33px);font-weight:1000}.puzzleHint{font-size:clamp(14px,2vw,19px);font-weight:950;margin-top:10px}.choiceRow{display:flex;justify-content:center;gap:10px;margin:16px auto}.choice{background:#e7edf0;border:3px solid white;border-radius:16px;min-width:66px;padding:9px 10px;font-size:33px;font-weight:1000}.choice.active{background:#ffe89d;outline:4px solid #ffb84e;transform:scale(1.07)}.choice.target{box-shadow:inset 0 0 0 4px #57c585}.choice small{display:block;font-size:12px}.gauge{margin:18px auto 8px;width:85%;height:28px;background:#e3e4de;border:4px solid white;border-radius:19px;position:relative;box-shadow:inset 0 1px 5px #17324420}.gaugeGood{position:absolute;top:0;bottom:0;left:30%;width:43%;background:#88d89a;border-radius:10px}.gaugeNeedle{position:absolute;top:-7px;width:8px;height:34px;background:#f29054;border:2px solid #fff;border-radius:6px;box-shadow:0 1px 6px #3f3f3f77;transform:translateX(-50%)}.error{font-size:15px;color:#dd8056;font-weight:1000}#overlay{position:fixed;inset:0;z-index:7;display:flex;align-items:center;justify-content:center;padding:15px;background:linear-gradient(130deg,#7bd9fb9a,#fff0abbb);backdrop-filter:blur(7px)}.modal{width:min(750px,97vw);max-height:96vh;overflow:auto;border:5px solid white;border-radius:34px;background:#fffdf4f8;padding:clamp(14px,3vw,29px);box-shadow:0 25px 80px #20475b66;text-align:center}.logo{font-weight:1000;font-size:clamp(35px,6vw,65px);letter-spacing:-1.8px;line-height:1.04;color:#188d9c}.logo em{font-style:normal;color:#eeb54c}.subtitle{font-weight:900;color:#53777f;font-size:clamp(15px,1.8vw,19px);line-height:1.4;margin:12px auto}.faces{display:flex;gap:8px;justify-content:center;margin:15px auto}.face{flex:1;padding:9px;border:3px solid white;border-radius:20px;color:white;font-weight:1000;font-size:clamp(16px,2vw,23px)}.face span{display:block;font-size:34px}.bigBtn{font:1000 clamp(19px,2.6vw,28px) ui-rounded,system-ui;background:#ffd66c;color:#603f15;padding:14px 22px;border:0;border-radius:20px;width:min(400px,100%);box-shadow:inset 0 -6px #eba949;cursor:pointer}.mode{display:flex;justify-content:center;gap:10px;margin:10px auto}.mode button{border:3px solid white;border-radius:14px;padding:12px 19px;background:#e1edf3;font:900 17px ui-rounded,system-ui;cursor:pointer}.mode button.selected{background:#b9efc9;outline:3px solid #5cbb92}.instructions{background:#e9f6ed;padding:10px;border-radius:13px;font-weight:900;margin:10px auto;font-size:15px}.scores{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin:15px}.score{background:#e6f5eb;border:2px solid white;border-radius:15px;padding:8px 14px;font-weight:1000}.footnote{margin-top:11px;font-size:12px;color:#789195;font-weight:750}#errorScreen{display:none;position:fixed;inset:0;z-index:10;background:#fffcf2;padding:40px;font-size:20px}@media(max-width:850px){#mission{display:none}#mapWrap{width:120px;height:120px;top:65px}#instrument{top:82px;max-width:60vw}#instrument span{font-size:11px;padding:4px}#puzzle{top:22%;padding:10px}#top{left:6px;top:7px;padding:4px 7px;gap:5px}#who{width:40px;height:40px;font-size:26px}#playerName{font-size:18px}#dayName{font-size:10px}#topRight{right:5px;top:6px;gap:3px}#topRight button{min-height:38px;padding:7px;font-size:12px}#dpad{grid-template-columns:repeat(3,48px);grid-template-rows:repeat(2,48px);gap:4px}#dpad button{font-size:26px;border-radius:12px}#space{height:65px;min-width:130px;font-size:19px;border-radius:17px}#centerMessage{bottom:88px;font-size:14px;padding:6px 9px}#bottom{bottom:7px;left:7px;right:7px}#puzzle .choice{min-width:44px;padding:6px;font-size:24px}}@media(max-height:530px){#mapWrap{display:none}#instrument{display:none}#puzzle{top:21%;padding:6px}.choiceRow{margin:7px auto}.choice{padding:3px!important}#centerMessage{bottom:86px}.subtitle{margin:5px auto}.faces{margin:6px auto}}
 
 /* Less intrusive HUD; keep the road, the bin and the hydraulic arm visible. */
@@ -147,7 +147,8 @@ const COL={sky:'#7fc6e4',grass:'#80c76e',road:'#6a777b',foot:'#dfd2b4',pink:'#e6
 function color(c){if(Array.isArray(c))return c;let s=c.replace('#','');if(s.length===3)s=[...s].map(c=>c+c).join('');return [parseInt(s.slice(0,2),16)/255,parseInt(s.slice(2,4),16)/255,parseInt(s.slice(4,6),16)/255]}
 const sub=(a,b)=>a.map((v,i)=>v-b[i]),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],norm=a=>{let d=Math.hypot(...a)||1;return a.map(v=>v/d)};
 class Mesh {constructor(){this.a=[];this.n=0}tri(A,B,C,c){let nn=norm(cross(sub(B,A),sub(C,A))),co=color(c);for(let p of [A,B,C])this.a.push(...p,...nn,...co);this.n+=3}quad(a,b,c,d,col){this.tri(a,b,c,col);this.tri(a,c,d,col)}
-box(x,y,z,w,h,d,col,rot=0){let C=Math.cos(rot),S=Math.sin(rot),p=(a,b,c)=>[x+a*C+c*S,y+b,z-a*S+c*C],v=[p(-w/2,-h/2,-d/2),p(w/2,-h/2,-d/2),p(w/2,h/2,-d/2),p(-w/2,h/2,-d/2),p(-w/2,-h/2,d/2),p(w/2,-h/2,d/2),p(w/2,h/2,d/2),p(-w/2,h/2,d/2)];for(let f of [[0,3,2,1],[4,5,6,7],[0,4,7,3],[1,2,6,5],[3,7,6,2],[0,1,5,4]])this.quad(v[f[0]],v[f[1]],v[f[2]],v[f[3]],col)}cylinder(x,y,z,r,h,col,N=10,axis='y',r2=r){let A=[],B=[];for(let i=0;i<N;i++){let a=i*TAU/N,C=Math.cos(a),S=Math.sin(a);if(axis==='x'){A.push([x-h/2,y+C*r,z+S*r]);B.push([x+h/2,y+C*r2,z+S*r2])}else if(axis==='z'){A.push([x+C*r,y+S*r,z-h/2]);B.push([x+C*r2,y+S*r2,z+h/2])}else{A.push([x+C*r,y-h/2,z+S*r]);B.push([x+C*r2,y+h/2,z+S*r2])}}for(let i=0;i<N;i++){let j=(i+1)%N;this.quad(A[i],A[j],B[j],B[i],col);let P=axis==='x'?[x-h/2,y,z]:axis==='z'?[x,y,z-h/2]:[x,y-h/2,z],Q=axis==='x'?[x+h/2,y,z]:axis==='z'?[x,y,z+h/2]:[x,y+h/2,z];this.tri(P,A[j],A[i],col);this.tri(Q,B[i],B[j],col)}}
+box(x,y,z,w,h,d,col,rot=0){let C=Math.cos(rot),S=Math.sin(rot),p=(a,b,c)=>[x+a*C+c*S,y+b,z-a*S+c*C],v=[p(-w/2,-h/2,-d/2),p(w/2,-h/2,-d/2),p(w/2,h/2,-d/2),p(-w/2,h/2,-d/2),p(-w/2,-h/2,d/2),p(w/2,-h/2,d/2),p(w/2,h/2,d/2),p(-w/2,h/2,d/2)];for(let f of [[0,3,2,1],[4,5,6,7],[0,4,7,3],[1,2,6,5],[3,7,6,2],[0,1,5,4]])this.quad(v[f[0]],v[f[1]],v[f[2]],v[f[3]],col)}
+cylinder(x,y,z,r,h,col,N=10,axis='y',r2=r){let A=[],B=[];for(let i=0;i<N;i++){let a=i*TAU/N,C=Math.cos(a),S=Math.sin(a);if(axis==='x'){A.push([x-h/2,y+C*r,z+S*r]);B.push([x+h/2,y+C*r2,z+S*r2])}else if(axis==='z'){A.push([x+C*r,y+S*r,z-h/2]);B.push([x+C*r2,y+S*r2,z+h/2])}else{A.push([x+C*r,y-h/2,z+S*r]);B.push([x+C*r2,y+h/2,z+S*r2])}}for(let i=0;i<N;i++){let j=(i+1)%N;this.quad(A[i],A[j],B[j],B[i],col);let P=axis==='x'?[x-h/2,y,z]:axis==='z'?[x,y,z-h/2]:[x,y-h/2,z],Q=axis==='x'?[x+h/2,y,z]:axis==='z'?[x,y,z+h/2]:[x,y+h/2,z];this.tri(P,A[j],A[i],col);this.tri(Q,B[i],B[j],col)}}
 ellipsoid(x,y,z,rx,ry,rz,col,N=10,R=6){for(let j=0;j<R;j++){let U=-Math.PI/2+Math.PI*j/R,V=-Math.PI/2+Math.PI*(j+1)/R;for(let i=0;i<N;i++){let a=i*TAU/N,b=(i+1)*TAU/N,P=(u,v)=>[x+rx*Math.cos(u)*Math.cos(v),y+ry*Math.sin(u),z+rz*Math.cos(u)*Math.sin(v)];this.quad(P(U,a),P(U,b),P(V,b),P(V,a),col)}}}
 bar(a,b,r,col,N=7){let T=norm(sub(b,a)),V=Math.abs(T[1])<.85?[0,1,0]:[1,0,0],U=norm(cross(T,V));V=cross(T,U);let A=[],B=[];for(let i=0;i<N;i++){let th=i*TAU/N,p=a.map((x,k)=>x+(U[k]*Math.cos(th)+V[k]*Math.sin(th))*r),q=b.map((x,k)=>x+(U[k]*Math.cos(th)+V[k]*Math.sin(th))*r);A.push(p);B.push(q)}for(let i=0;i<N;i++){let j=(i+1)%N;this.quad(A[i],A[j],B[j],B[i],col)}}}
 // Living Town v4: independently authored GLB meshes, baked into an offline vertex cache.
@@ -166,8 +167,9 @@ for(const [key,parts] of Object.entries(ASSET_SOURCE.trucks))ASSET_TRUCKS[key]=p
 for(const [key,parts] of Object.entries(ASSET_SOURCE.town))ASSET_PREFABS[key]=parts.map(decodePart);
 function materialAsset(m,parts,tx,tz,ry=0,scale=1,anim=null){
  const C=Math.cos(ry),S=Math.sin(ry);
- for(const part of parts){
-  const coords=part.coords, name=part.n, wheelTag=name.match(/_(front|middle|rear)_(L|R)/);
+ for(const part of parts){  const coords=part.coords, name=part.n, wheelTag=name.match(/_(front|middle|rear)_(L|R)/);
+  // Original GLB panels/wheels remain; the separate joint solver owns the bin-lifting rig.
+  if(anim?.hideHydraulics&&(name.startsWith('arm_')||name.startsWith('gripper_')))continue;
   const wheelZ=wheelTag?(wheelTag[1]==='front'?2.08:wheelTag[1]==='middle'?-1.64:-2.75):0;
   const wheelCx=wheelTag?(wheelTag[2]==='L'?-1.185:1.185):0;
   const wheelRotate=anim&&wheelTag?(anim.roll||0):0;
@@ -232,21 +234,12 @@ function drawTruckAsset(m,x,z,yaw){
   gate=t<.15?0:t<.37?smooth((t-.15)/.22)*1.70:t<.80?1.70:(1-smooth((t-.80)/.2))*1.70;
   eject=t<.36?0:t<.70?smooth((t-.36)/.34):t<.83?1:1-smooth((t-.83)/.17);
  }
- const reach=clamp(state.target?.reach||3.50,2.65,5.2),tipX=(2.62+(reach-2.62)*state.extension)*(1-state.lift)+.95*state.lift,
-       tipY=1.28+state.lift*2.68,tipZ=(state.target?.side||0)*state.extension*(1-state.lift);
- const tip=[tipX,tipY,tipZ],joint=[1.98+(tipX-1.98)*.40,1.56+(tipY-1.56)*.45,tipZ*.36];
- const anim={roll:game.wheelRoll,steer:game.steer*TRUCK.maxSteerRad,gate,eject,tip,joint,lifter:state,
-    heave:chassisPhysics.heave,pitch:chassisPhysics.pitch,bodyRoll:chassisPhysics.roll,suspension:chassisPhysics.suspension.map(s=>s.travel)};
+ const anim={roll:game.wheelRoll,steer:game.steer*TRUCK.maxSteerRad,gate,eject,hideHydraulics:true,
+   heave:chassisPhysics.heave,pitch:chassisPhysics.pitch,bodyRoll:chassisPhysics.roll,suspension:chassisPhysics.suspension.map(s=>s.travel)};
  materialAsset(m,parts,x,z,yaw,1,anim);
- // Contact shadow is deliberately not part of the truck's collision body.
  m.ellipsoid(x,.035,z,1.55,.035,3.7,'#637b68',10,3);
- if(state.bin){binInGripper(m,x,z,yaw,tipX,tipY-.08,state.tilt,state.colour,tipZ);
-  if(state.tilt>1.3&&state.progress<.72){for(let i=0;i<11;i++){
-   let u=(state.progress-.50-i*.005)/.20;if(u<=0||u>=1)continue;
-   let p=pt(x,z,yaw,tipX-.65-u*.5,tipY+.35-u*1.70,(rng(i+3)-.5)*1.0+tipZ);
-   m.box(...p,.13,.16,.13,['#d8c9a4','#a4bdaf','#c1a9ac'][i%3]);
-  }}
- }
+ // One mechanically consistent frame owns gripper, bin and hydraulic cylinders.
+ sideLift3D(m,x,z,yaw,state);
  if(game.screen==='animation'&&game.animation?.type==='depot'&&eject>.15){
   for(let i=0;i<Math.min(16,game.fill*4);i++){
    let q=(t-.44-i*.013)/.24;if(q<=0||q>=1)continue;
@@ -296,7 +289,8 @@ function house(m,x,z,i){
 function shop(m,x,z,i){
  cameraSolids.push({x,z,r:7.2,roof:4.35,halfW:5.9,halfL:5.2,angle:0});
  drawPrefab(m,'shop',x,z,0,1);
-}function houseDetailed(m,x,z,i){house(m,x,z,i)}
+}
+function houseDetailed(m,x,z,i){house(m,x,z,i)}
 function roadsideEucalypt(m,x,z,scale=1,id=0){
  drawPrefab(m,id%3===0?'gum2':'gum',x,z,(id%5)*.63,scale);
 }
@@ -342,8 +336,7 @@ for(let i=0;i<52;i++){
 }
 // Outside town: paddocks, rows of colorful trees, a few hillocks
 for(let i=0;i<90;i++){let a=rng(i+12)*TAU,r=125+rng(i+52)*16,x=Math.cos(a)*r,z=Math.sin(a)*r;if(Math.abs(x)<111&&Math.abs(z)<111)continue;if(i%4===0)m.ellipsoid(x,-.25,z,6+rng(i)*5,1.5+rng(i+3)*2.5,7,'#88c57b',8,4);else tree(m,x,z,.6+rng(i+5)*.8,['#f0b0d8','#d6abed','#aedb79','#ffcf72'][i%4],i%4)}
-// Street trees; mix blossom canopies like the supplied render
-for(let a of GRID)for(let i=-80;i<=80;i+=24){if(GRID.some(q=>Math.abs(q-i)<10))continue;let variant=(Math.floor(i/15)+Math.floor(a/32)+24)%4;for(let off of [-10.0,10.0]){let xx=(i+((i*a)%3)),zz=a+off;if(Math.abs(xx)<114&&Math.abs(zz)<114)tree(m,xx,zz,.85+rng(xx+zz)*.4,['#df9ce0','#f5c45a','#a1d477','#e7a0e2'][variant],variant===1?3:0)}}
+// Street trees; mix blossom canopies like the supplied renderfor(let a of GRID)for(let i=-80;i<=80;i+=24){if(GRID.some(q=>Math.abs(q-i)<10))continue;let variant=(Math.floor(i/15)+Math.floor(a/32)+24)%4;for(let off of [-10.0,10.0]){let xx=(i+((i*a)%3)),zz=a+off;if(Math.abs(xx)<114&&Math.abs(zz)<114)tree(m,xx,zz,.85+rng(xx+zz)*.4,['#df9ce0','#f5c45a','#a1d477','#e7a0e2'][variant],variant===1?3:0)}}
 
 // Additional native roadside shade trees, garden trees and planted avenue strips.
 for(let a=0;a<GRID.length-1;a++)for(let b=0;b<GRID.length-1;b++){
@@ -407,54 +400,112 @@ function meshBoxInBin(m,truckX,truckZ,yaw,tipX,tipY,tilt,ox,oy,oz,w,h,d,col,tipZ
  const verts=[];for(let [i,j,k] of [[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]])verts.push(point(ox+i*w/2,oy+j*h/2,k*d/2));
  for(let f of [[0,3,2,1],[4,5,6,7],[0,4,7,3],[1,2,6,5],[0,1,5,4],[3,7,6,2]])m.quad(...f.map(i=>verts[i]),col);
 }
-function binInGripper(m,x,z,yaw,tipX,tipY,tilt,colour,tipZ=0){
- meshBoxInBin(m,x,z,yaw,tipX,tipY,tilt,0,0,0,1.18,1.62,1.10,colour,tipZ);
- meshBoxInBin(m,x,z,yaw,tipX,tipY,tilt,0,.88,0,1.32,.15,1.25,'#364852',tipZ);
- for(let s of [-1,1])meshBoxInBin(m,x,z,yaw,tipX,tipY,tilt,s*.44,-.71,-.53,.23,.25,.20,'#263a44',tipZ);
+// Reference-guided Australian side-loader: the carriage, jaws and cart are one kinematic rig.
+// The real Bucher Sport lists an indicative 8–12s full cycle, 3.83–4.48m reach.
+// All coordinates are metres in the truck's local frame (+X to collection side).
+function hydraulicTimeline(t){
+ t=clamp(t,0,1);
+ const S=(a,b)=>smooth((t-a)/(b-a));
+ let extension=0,lift=0,tilt=0,closed=0,phase='stowed';
+ if(t<.15){extension=S(0,.15);phase='extending'}
+ else if(t<.23){extension=1;closed=S(.15,.23);phase='gripping'}
+ else if(t<.34){extension=1-.68*S(.23,.34);closed=1;lift=.12*S(.23,.34);phase='retracting'}
+ else if(t<.56){extension=.32-.23*S(.34,.56);closed=1;lift=.12+.88*S(.34,.56);phase='lifting'}
+ else if(t<.68){extension=.09;closed=1;lift=1;tilt=2.74*S(.56,.68);phase='tipping'}
+ else if(t<.72){extension=.09;closed=1;lift=1;tilt=2.74+.10*Math.sin((t-.68)/.04*Math.PI*4);phase='shaking'}
+ else if(t<.79){extension=.09;closed=1;lift=1;tilt=2.74*(1-S(.72,.79));phase='righting'}
+ else if(t<.89){extension=.09+.43*S(.79,.89);closed=1;lift=1-S(.79,.89);phase='lowering'}
+ else if(t<.94){extension=.52+.48*S(.89,.94);closed=1;phase='returning'}
+ else if(t<.96){extension=1;closed=1-S(.94,.96);phase='releasing'}
+ else {extension=1-S(.96,1);phase='stowing'}
+ // The bin becomes rigidly coupled only once fingers have fully closed.
+ return {t,extension,lift,tilt,closed,phase,bin:t>=.23&&t<.96};
 }
 function smooth(t){t=clamp(t,0,1);return t*t*(3-2*t)}
 function collectionTarget(job){
- if(!job)return {reach:4.45,side:.1};
- let dx=job.x-game.x,dz=job.z-game.z,co=Math.cos(game.heading),si=Math.sin(game.heading);
- // World-to-body transform: positive X is the truck's right-hand working side.
- let x=dx*co-dz*si,z=dx*si+dz*co;
- return {reach:clamp(Math.abs(x),2.6,5.2),side:clamp(z,-1.5,1.5),right:x>=-1};
+ if(!job)return {x:4.0,z:0,reach:4.0,side:0,right:true,accessible:true};
+ const dx=job.x-game.x,dz=job.z-game.z,co=Math.cos(game.heading),si=Math.sin(game.heading);
+ const x=dx*co-dz*si,z=dx*si+dz*co;
+ // Bin centre must be beside the RIGHT side of the vehicle, not behind or on the left.
+ const accessible=x>=2.55&&x<=5.35&&Math.abs(z)<=1.65;
+ return {x,z,reach:x,side:z,right:x>0,accessible};
 }
 function loaderState(){
  if(game.screen==='animation'&&['bin','bulky'].includes(game.animation?.type)){
-  let a=game.animation,t=clamp(a.t,0,1),extension=0,lift=0,tilt=0,closed=0;
-  if(t<.17){extension=smooth(t/.17);closed=0}
-  else if(t<.25){extension=1;closed=smooth((t-.17)/.08)}
-  else if(t<.45){extension=1-smooth((t-.25)/.20);lift=smooth((t-.25)/.20);closed=1}
-  else if(t<.66){lift=1;closed=1;tilt=smooth((t-.45)/.21)*2.42}
-  else if(t<.75){lift=1;closed=1;tilt=(1-smooth((t-.66)/.09))*2.42}
-  else if(t<.92){lift=1-smooth((t-.75)/.17);extension=smooth((t-.75)/.17);closed=1}
-  else{extension=1-smooth((t-.92)/.08);closed=1-smooth((t-.92)/.08)}
-  return {extension,lift,tilt,closed,target:collectionTarget(a.job),bin:t>=.23&&t<.94,colour:['#b97843','#f7cb46','#64ba6c','#de6660'][a.job.index%4],progress:t};
+  const a=game.animation,s=hydraulicTimeline(a.t),target=a.pickupTarget||collectionTarget(a.job);
+  const lift=s.lift;
+  // Trolley at grab height 1.24m and top-over position near the hopper at 4.65m.
+  const x=lerp(2.12,target.reach,s.extension)*(1-lift)+1.62*lift;
+  const y=1.24+3.40*lift;
+  const z=target.side*(.18+.82*s.extension)*(1-lift)+target.side*.22*lift;
+  return {...s,target,tipX:x,tipY:y,tipZ:z,colour:['#b97843','#f7cb46','#64ba6c','#de6660'][a.job.index%4]};
  }
- if(game.screen==='task'&&game.task?.job.type==='bin')return {extension:0,lift:0,tilt:0,closed:0,bin:false,progress:0,target:collectionTarget(game.task.job)};
- return {extension:0,lift:0,tilt:0,closed:0,bin:false,progress:0,target:{reach:4.45,side:.1}};
+ if(game.screen==='task'&&['bin','bulky'].includes(game.task?.job.type)){
+  return { ...hydraulicTimeline(0),tipX:2.12,tipY:1.24,tipZ:0,target:collectionTarget(game.task.job),colour:'#f7cb46' };
+ }
+ return { ...hydraulicTimeline(0),tipX:2.12,tipY:1.24,tipZ:0,target:{reach:4.0,side:0,right:true,accessible:true},colour:'#f7cb46'};
+}
+function gripperPoint(x,z,yaw,state,ox=0,oy=0,oz=0){
+ const c=Math.cos(state.tilt),s=Math.sin(state.tilt);
+ return pt(x,z,yaw,state.tipX+ox*c-oy*s,state.tipY+ox*s+oy*c,state.tipZ+oz);
+}
+function binInGripper(m,x,z,yaw,state){
+ const X=state.tipX,Y=state.tipY,Z=state.tipZ,a=state.tilt,col=state.colour;
+ // Rotating about the CLAMP axis: body, lid, wheels and clamp pads share one frame.
+ meshBoxInBin(m,x,z,yaw,X,Y,a,0,-.23,0,1.18,1.60,1.10,col,Z);
+ meshBoxInBin(m,x,z,yaw,X,Y,a,0,.64,0,1.35,.15,1.25,'#34464d',Z);
+ meshBoxInBin(m,x,z,yaw,X,Y,a,-.08,.52,-.52,1.24,.12,.17,'#263841',Z);
+ for(let side of [-1,1]){
+  meshBoxInBin(m,x,z,yaw,X,Y,a,-.05,-.92,side*.42,.23,.26,.16,'#34444a',Z);
+  let wheel=gripperPoint(x,z,yaw,state,-.06,-.94,side*.43);
+  m.ellipsoid(...wheel,.16,.16,.16,'#2d3b43',8,5);
+ }
 }
 function sideLift3D(m,x,z,yaw,state){
- let ext=state.extension,raised=state.lift,reach=state.target?.reach||4.45;
-  let tipX=lerp(2.6,reach,ext)*(1-raised)+1.15*raised,tipY=1.3+raised*3.45;
-  let tipZ=lerp(.10,state.target?.side||.1,ext*(1-raised));
- let root=pt(x,z,yaw,1.79,1.72,.10),pivot=pt(x,z,yaw,2.54,1.76+raised*.72,.10),tip=pt(x,z,yaw,tipX,tipY,tipZ);
- m.cylinder(...root,.30,.38,'#d88d46',11,'z');m.bar(root,pivot,.25,'#e5a050',9);m.bar(pivot,tip,.20,'#ffc86e',9);
- let hyd1=pt(x,z,yaw,1.95,1.20,-.15),hyd2=pt(x,z,yaw,2.58,1.78+raised*.7,-.15);m.bar(hyd1,hyd2,.14,'#8fa8b1');m.bar(hyd2,pt(x,z,yaw,2.78,2.13+raised*.90,-.15),.09,'#e3f5ef');
- let hyd3=pt(x,z,yaw,2.54,1.74,.28),hyd4=pt(x,z,yaw,lerp(2.72,tipX,.65),lerp(1.70,tipY,.67),tipZ+.16);m.bar(hyd3,hyd4,.095,'#c3d4d7');
- const halfZ=lerp(1.14,.60,state.closed);
- m.bar(pt(x,z,yaw,tipX,tipY,tipZ-halfZ),pt(x,z,yaw,tipX,tipY,tipZ+halfZ),.15,'#f9cf71');
- for(let side of [-1,1]){  let pos=pt(x,z,yaw,tipX+.18,tipY-.15,tipZ+side*halfZ);
-  m.ellipsoid(...pos,.20,.20,.22,'#eaa253',8,4);
-  m.bar(pt(x,z,yaw,tipX+.12,tipY+.05,tipZ+side*halfZ),pt(x,z,yaw,tipX+.22,tipY-.55,tipZ+side*halfZ),.15,'#eda74b');
-  m.ellipsoid(...pt(x,z,yaw,tipX+.23,tipY-.51,tipZ+side*halfZ),.20,.32,.15,'#4b6970',7,4);
+ const ext=state.extension,lift=state.lift,X=state.tipX,Y=state.tipY,Z=state.tipZ;
+ const P=(lx,ly,lz=0)=>pt(x,z,yaw,lx,ly,lz);
+ // Fixed lift tower and guideways (no telescoping/detached beams).
+ for(const side of [-1,1]){
+   m.bar(P(2.02,1.19,side*.38),P(2.02,4.69,side*.38),.12,'#496169',9);
+   m.bar(P(2.18,1.24,side*.37),P(2.18,Y,side*.37),.058,'#afbfc4',8);
+ }
+ m.bar(P(1.76,1.38,-.59),P(1.76,2.70,-.59),.22,'#df9b4a',9);
+ m.bar(P(1.76,1.38,.59),P(1.76,2.70,.59),.22,'#df9b4a',9);
+ // Lift carriage slides along guides, independent of lateral reach.
+ m.bar(P(2.12,Y,-.58),P(2.12,Y,.58),.23,'#d58b3e',11);
+ for(const side of [-1,1]){
+   const railZ=side*.34;
+   m.bar(P(2.14,Y,railZ),P(X,Y,Z+railZ),.15,'#e5ae53',10);
+   m.bar(P(2.16,Y-.19,railZ),P(X-.22,Y-.19,Z+railZ),.075,'#9baab2',8);
+ }
+ // Two-stage piston is drawn from frame anchor to moving carriage/slide.
+ let cylinderStart=P(1.77,1.55,-.39),cylinderMid=P(2.01,1.95+lift*.90,-.39),cylinderEnd=P(2.16,Y,-.39);
+ m.bar(cylinderStart,cylinderMid,.13,'#d7ac6c',9);
+ m.bar(cylinderMid,cylinderEnd,.075,'#d8e8ec',8);
+ let slideAnchor=P(2.18,Y-.15,.30),slideEnd=P(X-.20,Y-.15,Z+.30);
+ m.bar(slideAnchor,slideEnd,.095,'#9bb3bc',8);
+ // The jaw fingers rotate together with the bin so they NEVER lose contact in the tip.
+ const jawHalf=lerp(.94,.55,state.closed);
+ const bridgeL=gripperPoint(x,z,yaw,state,.00,.15,-.76);
+ const bridgeR=gripperPoint(x,z,yaw,state,.00,.15,.76);
+ m.bar(bridgeL,bridgeR,.105,'#e9ad59',9);
+ for(const side of [-1,1]){
+  const jawZ=side*jawHalf;
+  const knuckle=gripperPoint(x,z,yaw,state,.07,.06,side*.76);
+  const tip=gripperPoint(x,z,yaw,state,.12,-.35,jawZ);
+  m.bar(knuckle,tip,.13,'#f2b65c',9);
+  m.bar(gripperPoint(x,z,yaw,state,.12,-.35,jawZ),gripperPoint(x,z,yaw,state,.15,-.58,jawZ),.125,'#405b64',8);
+  m.ellipsoid(...tip,.15,.20,.14,'#354d54',8,4);
  }
  if(state.bin){
-  let binY=tipY-.05;
-  binInGripper(m,x,z,yaw,tipX,binY,state.tilt,state.colour,tipZ);
-  if(state.tilt>1.15 && state.progress<.72){for(let i=0;i<13;i++){let u=(state.progress-.51-i*.006)/.13;if(u<=0||u>=1)continue;let q=pt(x,z,yaw,tipX-1.1-u*.8,tipY+.72-u*1.7,(rng(i+3)-.5)*1.6+tipZ);m.box(...q,.22,.22,.18,['#f2d38b','#aad8bb','#cfabde'][i%3]);}}
- }
+   binInGripper(m,x,z,yaw,state);
+   if(['tipping','shaking'].includes(state.phase)){
+    for(let i=0;i<12;i++){
+     const u=((state.t*12.0+i*.19)%1);
+     const q=P(.90+u*.22,4.25-u*.90, Z+(rng(i+14)-.5)*.75);
+     m.box(...q,.18,.18,.17,['#d4ab73','#8ebd8c','#d9aa9b','#c5d2b0'][i%4]);
+    }
+   } }
 }
 function rearUnload3D(m,x,z,yaw){
  let a=game.animation,active=game.screen==='animation'&&a?.type==='depot',t=active?clamp(a.t,0,1):0;
@@ -594,7 +645,8 @@ function collisionCarsOBB(){
   const Cv=[car.v*Math.sin(car.h),car.v*Math.cos(car.h)];
   let approaching=(Tv[0]-Cv[0])*normAxis[0]+(Tv[1]-Cv[1])*normAxis[1];
   if(approaching>.12){
-   const impulse=(1.08*approaching)/(1/T.m+1/c.m);   const tHeading=[Math.sin(game.heading),Math.cos(game.heading)],cHeading=[Math.sin(car.h),Math.cos(car.h)];
+   const impulse=(1.08*approaching)/(1/T.m+1/c.m);
+   const tHeading=[Math.sin(game.heading),Math.cos(game.heading)],cHeading=[Math.sin(car.h),Math.cos(car.h)];
    game.v-=clamp(impulse/T.m*(normAxis[0]*tHeading[0]+normAxis[1]*tHeading[1]),-2.6,2.6);
    car.v+=clamp(impulse/c.m*(normAxis[0]*cHeading[0]+normAxis[1]*cHeading[1]),-3,3);
    const contactOffset=(car.x-game.x)*Math.cos(game.heading)-(car.z-game.z)*Math.sin(game.heading);
@@ -622,8 +674,7 @@ function rb(m,x,z,yaw,lx,ly,lz,w,h,d,col){
     a.push(rigidPoint(x,z,yaw,lx+i*w*.5,ly+j*h*.5,lz+k*d*.5));
   for(const f of [[0,3,2,1],[4,5,6,7],[0,4,7,3],[1,2,6,5],[3,7,6,2],[0,1,5,4]])m.quad(...f.map(i=>a[i]),col);
 }
-function rbar(m,x,z,yaw,a,b,r,col,n=7){m.bar(rigidPoint(x,z,yaw,...a),rigidPoint(x,z,yaw,...b),r,col,n)}
-function rquad(m,x,z,yaw,coords,c){m.quad(...coords.map(v=>rigidPoint(x,z,yaw,...v)),c)}
+function rbar(m,x,z,yaw,a,b,r,col,n=7){m.bar(rigidPoint(x,z,yaw,...a),rigidPoint(x,z,yaw,...b),r,col,n)}function rquad(m,x,z,yaw,coords,c){m.quad(...coords.map(v=>rigidPoint(x,z,yaw,...v)),c)}
 function rtriangle(m,x,z,yaw,coords,c){m.tri(...coords.map(v=>rigidPoint(x,z,yaw,...v)),c)}
 function rball(m,x,z,yaw,a,b,c,ra,rb,rc,col,n=10){let p=rigidPoint(x,z,yaw,a,b,c);m.ellipsoid(...p,ra,rb,rc,col,n,5)}
 function rWheel(m,x,z,yaw,lx,lz,index){
@@ -743,7 +794,8 @@ function engineeredTruck3D(m,x,z,yaw){
     rb(m,x,z,yaw,side*1.80,.76,2.50,.35,.065,.98,'#e6b74e');
     // Mirror assembly with two adjusters.
     rbar(m,x,z,yaw,[side*1.60,2.67,3.22],[side*2.06,2.83,3.55],.04,'#344246');
-    rb(m,x,z,yaw,side*2.10,2.75,3.52,.15,.54,.34,'#293840');    rb(m,x,z,yaw,side*2.19,2.76,3.52,.04,.46,.29,'#aabcc0');
+    rb(m,x,z,yaw,side*2.10,2.75,3.52,.15,.54,.34,'#293840');
+    rb(m,x,z,yaw,side*2.19,2.76,3.52,.04,.46,.29,'#aabcc0');
     // Front lamps and indicators.
     rb(m,x,z,yaw,side*1.24,1.66,4.25,.48,.58,.10,'#cbdce1');
     rb(m,x,z,yaw,side*1.24,1.94,4.33,.44,.15,.09,'#fff2b5');
@@ -791,8 +843,7 @@ function engineeredTruck3D(m,x,z,yaw){
   for(let i=0;i<5;i++)rbar(m,x,z,yaw,[1.75,2.60,.37+i*.14],[1.83,1.86,.25+i*.14],.024,'#2a3538',5);
   for(let q=0;q<game.fill&&q<8;q++)rb(m,x,z,yaw,(rng(q*6)-.5)*2.0,2.61,(rng(q+4)-.5)*1.2,.36,.19,.29,['#c6b79a','#a1b8a7','#d3a9b3'][q%3]);
   // Rear ejector machinery and releaseable tailgate.
-  rb(m,x,z,yaw,0,2.25,-4.07,3.45,2.43,.20,'#3b7c47');
-  for(let side of [-1,1])rbar(m,x,z,yaw,[side*1.52,1.12,-4.20],[side*1.52,3.61,-4.19],.065,'#f6e4a2');
+  rb(m,x,z,yaw,0,2.25,-4.07,3.45,2.43,.20,'#3b7c47');  for(let side of [-1,1])rbar(m,x,z,yaw,[side*1.52,1.12,-4.20],[side*1.52,3.61,-4.19],.065,'#f6e4a2');
   for(let i=0;i<7;i++)rb(m,x,z,yaw,-1.25+i*.4,1.03,-4.37,.32,.16,.09,i%2?'#d84b46':'#fff4df');
   for(const s of [-1,1])rb(m,x,z,yaw,s*1.38,1.48,-4.45,.28,.35,.10,'#cf5451');
   hydraulicSideLifter(m,x,z,yaw,loaderState());
@@ -892,7 +943,8 @@ function sanitiseLearning(input){
 }
 function load(){try{let data=JSON.parse(localStorage.getItem(STORE)||'null');if(data&&data.v===1&&Number.isFinite(data.x)&&Number.isFinite(data.z)&&Array.isArray(data.scores)&&data.scores.length===3){
  const day=clamp(Math.floor(data.day||0),0,9999),safeJobs=Array.isArray(data.jobs)&&(data.jobs.length===15||data.jobs.length===24)&&data.jobs.every(j=>Number.isFinite(j.x)&&Number.isFinite(j.z)&&typeof j.type==='string'&&typeof j.done==='boolean');
- Object.assign(game,{turn:clamp(Math.floor(data.turn||0),0,149999),day,mode:data.mode==='free'?'free':'guided',camera:data.camera==='cinematic'?'cinematic':'chase',x:clamp(data.x,-124,124),z:clamp(data.z,-124,124),heading:Number.isFinite(data.heading)?data.heading:0,fuel:clamp(data.fuel??88,6,100),fill:clamp(data.fill??0,0,8),clean:clamp(data.clean??90,0,100),stars:Array.isArray(data.stars)&&data.stars.length===3?data.stars:[0,0,0],scores:data.scores,crashes:data.crashes||0,learning:sanitiseLearning(data.learning),jobs:safeJobs?data.jobs:jobsFor(day),v:0,steer:0,task:null,animation:null,bonus:null}); }}catch(e){console.warn('Save recovery: starting a clean session',e)}}
+ Object.assign(game,{turn:clamp(Math.floor(data.turn||0),0,149999),day,mode:data.mode==='free'?'free':'guided',camera:data.camera==='cinematic'?'cinematic':'chase',x:clamp(data.x,-124,124),z:clamp(data.z,-124,124),heading:Number.isFinite(data.heading)?data.heading:0,fuel:clamp(data.fuel??88,6,100),fill:clamp(data.fill??0,0,8),clean:clamp(data.clean??90,0,100),stars:Array.isArray(data.stars)&&data.stars.length===3?data.stars:[0,0,0],scores:data.scores,crashes:data.crashes||0,learning:sanitiseLearning(data.learning),jobs:safeJobs?data.jobs:jobsFor(day),v:0,steer:0,task:null,animation:null,bonus:null});
+ }}catch(e){console.warn('Save recovery: starting a clean session',e)}}
 function beginWeek(){game.turn=0;game.day=0;game.x=-64;game.z=-82;game.heading=0;game.v=0;game.fuel=88;game.fill=0;game.clean=90;game.jobs=jobsFor(0);game.bonus=null;game.task=null;game.animation=null;game.crashes=0;game.scores=[0,0,0];game.stars=[0,0,0];game.learning=sanitiseLearning(null);save();intro()}
 function scores(){return `<div class="scores">${P.map((p,i)=>`<div class="score" style="background:${['#dceeff','#fce1f0','#e4f7dc'][i]}">${p.emoji} ${p.name} · ${game.scores[i]} jobs · ⭐ ${game.stars[i]} · ♻️ ${game.learning.sorted[i]} · 🏅 ${game.learning.stickers[i]}</div>`).join('')}</div>`}
 function modePicker(){return `<div class="mode"><button data-mode="guided" class="${game.mode==='guided'?'selected':''}">🎮 GUIDED</button><button data-mode="free" class="${game.mode==='free'?'selected':''}">🚛 FREE</button></div><div style="font-size:12px;font-weight:900;color:#63818a">← → SWITCH STEERING · SPACE START</div>`}
@@ -918,6 +970,7 @@ function closestJob(){let candidates=game.jobs.filter(j=>!j.done);
 
 function isParked(){return Math.abs(game.v)<1.3}
 function beginTask(){let {j,d}=closestJob();if(!j){toast('🎉 ALL JOBS FINISHED!');return}if(d>9){horn();toast('🗺️ FOLLOW THE SHINING JOB MARKERS!',1400);return}if(!isParked()){tone(215,.17,.14,'triangle');toast('🛑 BRAKE WITH ↓ FIRST!',1300);return}if(j.type==='depot'&&game.fill===0){toast('🗑️ COLLECT SOME BINS FIRST!',2000);return}if((j.type==='bin'||j.type==='bulky')&&game.fill>=8){toast('🚛 TRUCK FULL! GO TO THE DEPOT.',2500);return}
+ if(j.type==='bin'||j.type==='bulky'){const pos=collectionTarget(j);if(!pos.accessible){let cue=!pos.right?'➡️ DRIVE PAST AND PARK WITH THE BIN ON THE RIGHT':Math.abs(pos.side)>1.65?'↕️ MOVE ALONGSIDE THE BIN':'↔️ PARK CLOSER TO THE BIN';toast('🦾 '+cue,2600);sayForKids('Park with the bin on the right side, close to the lifting arm.',true);return}}
  game.v=0;let tray=sortingTray(j,game.day,game.turn);game.task={job:j,stage:0,choice:0,target:0,errors:0,tray};keys.clear();game.screen='task';audioOn();tone(600,.15,.12);updatePuzzle();updateHUD();sortingPrompt(game.task)}
 
 // Sorting school: every job uses the same picture-first activity, with different waste themes.
@@ -959,8 +1012,7 @@ const WASTE_LIBRARY={
  ],
  general:[
   ['🧽','Old sponge'],['🪥','Old toothbrush'],['✏️','Broken pencil'],['🖍️','Broken crayons'],
-  ['🩹','Used plaster'],['🧦','Worn-out sock'],['🧤','Old rubber glove'],['🎈','Burst balloon'],
-  ['🧸','Broken soft toy'],['📎','Small mixed-material clip'],['🧽','Worn cleaning pad'],
+  ['🩹','Used plaster'],['🧦','Worn-out sock'],['🧤','Old rubber glove'],['🎈','Burst balloon'],  ['🧸','Broken soft toy'],['📎','Small mixed-material clip'],['🧽','Worn cleaning pad'],
   ['🧼','Old soap wrapper'],['🧻','Used tissue'],['🧼','Broken soap dish'],['🥤','Broken plastic straw'],
   ['🩴','Broken thong'],['🎀','Worn ribbon'],['🧴','Empty toothpaste tube'],['📸','Damaged photograph'],
   ['🧹','Old broom bristles'],['🧸','Torn toy stuffing'],['🕶️','Broken sunglasses'],['👟','Worn-out shoe'],
@@ -1041,7 +1093,8 @@ function handlePuzzle(key){
  L.sorted[p]++;L.categories[item.cat]++;L.streak[p]++;L.best[p]=Math.max(L.best[p],L.streak[p]);
  let sticker=L.streak[p]>0&&L.streak[p]%5===0;
  if(sticker){L.stickers[p]++;t.reward='🏅 New sticker!';toast(P[p].emoji+' 🏅 FIVE GREAT SORTS!',1700)}
- else t.reward='✅ Great job!'; t.hint=null;
+ else t.reward='✅ Great job!';
+ t.hint=null;
  tone(740+t.stage*75,.12,.18);addBurst(game.x,game.z,'stars',8);
  t.stage++;
  if(t.stage>=t.tray.length){sayForKids(sticker?'You earned a new sticker! Excellent sorting!':'Great sorting! Watch the rubbish truck work!',true);completeTask();return}
@@ -1052,7 +1105,7 @@ function onRelease(key){/* Sorting uses one SPACE press per item, not a hold tim
 
 function completeTask(){
  let t=game.task;if(!t)return;
- game.animation={t:0,type:t.job.type,job:t.job,errors:t.errors};
+ game.animation={t:0,type:t.job.type,job:t.job,errors:t.errors,pickupTarget:collectionTarget(t.job)};
  // Truck body remains stationary: only hydraulic joints and the bin move during collection.
  game.v=0;game.steer=0;game.task=null;keys.clear();game.screen='animation';cheer();
  if(t.job.type==='crash')game.animation.t=-.35;
@@ -1101,7 +1154,7 @@ $('who').textContent=p.emoji;$('who').style.background=['#dcecff','#ffe3ef','#e5
 if(c.j){let meta=JOB_LABELS[c.j.type]||['🧹','Clean up'];$('missionTitle').textContent=meta[0]+' '+meta[1];$('missionDist').textContent=game.fill>=8?'🏭 GO TO DEPOT':(c.d<=9?'🛑 STOP HERE':'🟡 FOLLOW THE GLOW');}else{$('missionTitle').textContent='🌈 NEXT SHIFT READY';$('missionDist').textContent='Amazing work!'}
 {let nav=navigationInstruction();$('routeIcon').textContent=nav[0];$('routeText').textContent=nav[1];$('routeArrow').className=nav[0]==='🛑'?'stopHere':nav[0]==='⬅️'?'turnLeft':nav[0]==='➡️'?'turnRight':'driveStraight';$('routeArrow').style.display=game.screen==='drive'?'flex':'none';audioNavigationPrompt()}
 $('puzzle').classList.toggle('show',game.screen==='task');if(game.screen==='task')updatePuzzle();
-if(game.screen==='drive'){$('space').textContent='SPACE';if(c.d<=9&&!isParked()){$('centerMessage').textContent='🛑 ⬇️ STOP';$('actionHint').textContent='STOP'}else if(c.d<=9){$('centerMessage').textContent='🛑 ✨ SPACE';$('actionHint').textContent='WORK'}else{$('centerMessage').textContent='🟡 FOLLOW ARROW + YELLOW LINE';$('actionHint').textContent='GO'}}else if(game.screen==='task'){$('centerMessage').textContent='⬅️➡️ + ✨';$('actionHint').textContent='PUZZLE';$('space').textContent='SPACE ✨'}else{$('centerMessage').textContent=game.animation?.type==='depot'?(game.animation.t<.34?'🔓 OPENING':game.animation.t<.73?'🏭 PUSHING OUT':'🔧 CLOSING'):(game.animation?.type==='bin'?(game.animation.t<.24?'🦾 REACH':game.animation.t<.45?'⬆️ LIFT':game.animation.t<.72?'🗑️ EMPTY':'⬇️ RETURN'):'✨ WORKING!');$('actionHint').textContent='GREAT JOB';$('space').textContent='⭐'}}
+if(game.screen==='drive'){$('space').textContent='SPACE';if(c.j&&['bin','bulky'].includes(c.j.type)&&c.d<=9&&isParked()&&!collectionTarget(c.j).accessible){$('centerMessage').textContent='🦾 ➡️ BIN ON RIGHT • ↔️ PARK CLOSE';$('actionHint').textContent='ALIGN ARM'}else if(c.d<=9&&!isParked()){$('centerMessage').textContent='🛑 ⬇️ STOP';$('actionHint').textContent='STOP'}else if(c.d<=9){$('centerMessage').textContent='🛑 ✨ SPACE';$('actionHint').textContent='WORK'}else{$('centerMessage').textContent='🟡 FOLLOW ARROW + YELLOW LINE';$('actionHint').textContent='GO'}}else if(game.screen==='task'){$('centerMessage').textContent='⬅️➡️ + ✨';$('actionHint').textContent='PUZZLE';$('space').textContent='SPACE ✨'}else{$('centerMessage').textContent=game.animation?.type==='depot'?(game.animation.t<.34?'🔓 OPENING':game.animation.t<.73?'🏭 PUSHING OUT':'🔧 CLOSING'):(['bin','bulky'].includes(game.animation?.type)?({extending:'🦾 REACH',gripping:'🦾 GRIP',retracting:'↔️ PULL IN',lifting:'⬆️ LIFT',tipping:'🗑️ TIP',shaking:'🗑️ SHAKE',righting:'🦾 STRAIGHTEN',lowering:'⬇️ LOWER',returning:'🗑️ TO KERB',releasing:'🦾 RELEASE',stowing:'↩️ STOW'}[loaderState().phase]||'🦾 WORKING'):'✨ WORKING!');$('actionHint').textContent='GREAT JOB';$('space').textContent='⭐'}}
 function press(key){if(!['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(key))return;
 if(['intro','handoff'].includes(game.screen)){if(key==='ArrowLeft'||key==='ArrowRight'){setMode(game.mode==='free'?'guided':'free');return}if(key==='Space'){start();return}}else if(game.screen==='shiftbreak'){if(key==='Space')start()}else if(game.screen==='paused'){if(key==='Space')resume()}else if(game.screen==='task')handlePuzzle(key);else if(game.screen==='drive'&&key==='Space')beginTask()}
 function toggleCam(){game.camera=game.camera==='chase'?'cinematic':'chase';toast(game.camera==='chase'?'📷 CHASE CAMERA':'📷 CINEMATIC CAMERA',1200);save()}
@@ -1128,8 +1181,7 @@ function collisionScenery(){
  if(game.screen!=='drive')return;
  const axes=h=>[[Math.cos(h),-Math.sin(h)],[Math.sin(h),Math.cos(h)]];
  const A=axes(game.heading),halfW=1.26,halfL=3.64;
- let touched=false;
- // Iterative separating-axis collision solver for the truck footprint vs each actual house/shop.
+ let touched=false; // Iterative separating-axis collision solver for the truck footprint vs each actual house/shop.
  for(let iter=0;iter<4;iter++){
   let contact=null;
   for(const b of cameraSolids){
@@ -1164,9 +1216,9 @@ if(game.screen==='drive'){
  else{updateChassisPhysics(dt,0,0)}
 // Sorting activities are keyboard-driven and pause vehicle physics until the last item is sorted.
 if(game.screen==='animation'&&game.animation){const a=game.animation;
-  if(!game.freezeAnimation)a.t+=dt/(['bin','depot'].includes(a.type)?6.0:2.15);
+  if(!game.freezeAnimation)a.t+=dt/(['bin','bulky'].includes(a.type)?11.2:(a.type==='depot'?6.0:2.15));
   if(a.type==='bin'||a.type==='depot'){
-   const phase=Math.floor(Math.max(0,a.t)*5),id=game.turn*8+phase;
+   const phase=Math.floor(Math.max(0,a.t)*6),id=game.turn*9+phase;
    if(phase<5&&lastMechanicPhase!==id){lastMechanicPhase=id;if(phase===1||phase===2||phase===3)tone(a.type==='depot'?125:180,.21,.045,'sawtooth',110)}
   }
   if(a.t>=1)resolveJob()}
@@ -1190,7 +1242,8 @@ function drawNPC(m,i,t){
  if(q.hat)m.box(xx,2.48,zz+.14,.88,.06,.39,'#e6b36f');
  if(q.bag)m.box(xx+.43,1.2,zz+.22,.30,.60,.36,'#e5ba71');
 }
-function drawAnimal(m,a,i,t){ let s=Math.sin(t*1.25+a.seed),bounce=game.wildlifeReact>0?Math.max(0,Math.sin(t*7+i))*0.43:0;
+function drawAnimal(m,a,i,t){
+ let s=Math.sin(t*1.25+a.seed),bounce=game.wildlifeReact>0?Math.max(0,Math.sin(t*7+i))*0.43:0;
  let x=a.x+Math.sin(t*.23+a.seed)*.95,z=a.z+Math.cos(t*.2+a.seed)*.65;
  let type=a.type,fur=['#bf9766','#91a7a8','#9b816d','#aca39b','#9c8c75','#fff1d7','#beaa85'][i%7];
  let E=(cx,cy,cz,rx,ry,rz,c)=>m.ellipsoid(x+cx,cy+bounce,z+cz,rx,ry,rz,c,8,5);
@@ -1237,10 +1290,26 @@ if(game.screen==='drive'){
  }
 }
 
-for(let j of game.jobs){if(j.done||dist(game,j)>76)continue;if(game.screen==='animation'&&game.animation?.job===j&&j.type==='bin'&&game.animation.t>.23&&game.animation.t<.94){glowingStop(m,j,t,false);continue;}let {j:closest}=closestJob();let on=j===closest;glowingStop(m,j,t,on);taskProp(m,j,t)}if(game.bonus){glowingStop(m,game.bonus,t,true);taskProp(m,game.bonus,t)}if(game.fill>0&&!game.jobs.some(j=>!j.done&&j.type==='depot')&&dist(game,SERVICE_DEPOT)<48){glowingStop(m,SERVICE_DEPOT,t,game.fill>=8);taskProp(m,SERVICE_DEPOT,t)}
+for(let j of game.jobs){if(j.done||dist(game,j)>76)continue;if(game.screen==='animation'&&game.animation?.job===j&&j.type==='bin'&&game.animation.t>=.23&&game.animation.t<.96){glowingStop(m,j,t,false);continue;}let {j:closest}=closestJob();let on=j===closest;glowingStop(m,j,t,on);taskProp(m,j,t)}if(game.bonus){glowingStop(m,game.bonus,t,true);taskProp(m,game.bonus,t)}if(game.fill>0&&!game.jobs.some(j=>!j.done&&j.type==='depot')&&dist(game,SERVICE_DEPOT)<48){glowingStop(m,SERVICE_DEPOT,t,game.fill>=8);taskProp(m,SERVICE_DEPOT,t)}
 for(let i=0;i<unicorns.length;i++){let q=unicorns[i];if(dist(game,q)>54)continue;let xx=q.x+Math.sin(clock*.28+i)*3.3,zz=q.z+Math.cos(clock*.28+i)*1.4;unicorn3D(m,xx,zz,t+i,.76)}
 // Animated traffic lights at junctions, pedestrians wave when truck arrives.
 for(let x of [-32,32])for(let z of [-32,32]){m.cylinder(x+6.0,3.8,z+5.6,.14,7.6,'#5c6570',7);m.box(x+6.05,6.2,z+5.7,.62,1.9,.75,'#394954');let red=(Math.floor(clock/9)+(x===32?1:0))%2===0;for(let i=0;i<3;i++){m.ellipsoid(x+6.13,6.75-i*.55,z+6.15,.22,.22,.10,i===0?(red?'#ff8b84':'#554b51'):i===2?(!red?'#84e9b3':'#4b5d52'):'#f1c763',7,4)}}
+// Kerbside parking guide: an unobtrusive green rectangle shows where the
+// six-wheel truck should stand, with the pickup bin on its right-hand side.
+if(game.screen==='drive'){
+ const next=closestJob().j;
+ if(next&&['bin','bulky'].includes(next.type)&&dist(game,next)<18){
+  const h=game.heading,px=next.x-3.78*Math.cos(h),pz=next.z+3.78*Math.sin(h);
+  let target=collectionTarget(next),ready=target.accessible;
+  if(!ready){
+   m.box(px,.195,pz,3.35,.025,7.0,'#95e5a5',h);
+   for(const dz of [-2.7,2.7]){
+    const r=pt(px,pz,h,0,.225,dz);
+    m.ellipsoid(...r,.36,.08,.36,'#eaf9b7',8,4);
+   }
+  }
+ }
+}
 truck3D(m,game.x,game.z,game.heading,game.bump,0);
 if(game.screen==='drive'){let f=game.heading;let near=closestJob().j;if(near){m.cylinder(near.x,4.5+Math.sin(t*3)*.4,near.z,.52,1.25,'#ffe7a8',9,'y',.1);for(let i=0;i<4;i++){let a=t*1.2+i*TAU/4;m.ellipsoid(near.x+Math.cos(a)*1.4,5.7,near.z+Math.sin(a)*1.4,.27,.28,.25,'#ffedb9',8,4)}}}
 for(let p of game.particles)particle(m,p);
@@ -1281,8 +1350,7 @@ function computeGPS(){
  if(GPS.goalKey!==key||!Number.isFinite(GPS.lastX)||Math.hypot(game.x-GPS.lastX,game.z-GPS.lastZ)>12){
   GPS.path=roadRoute(game,j);GPS.goalKey=key;GPS.lastX=game.x;GPS.lastZ=game.z;
  }
- // Remove waypoints passed in the player's current direction without prematurely skipping the destination.
- while(GPS.path.length>2&&Math.hypot(game.x-GPS.path[1].x,game.z-GPS.path[1].z)<7)GPS.path.splice(0,1);
+ // Remove waypoints passed in the player's current direction without prematurely skipping the destination. while(GPS.path.length>2&&Math.hypot(game.x-GPS.path[1].x,game.z-GPS.path[1].z)<7)GPS.path.splice(0,1);
  return GPS.path;
 }
 function navigationInstruction(){
@@ -1339,7 +1407,8 @@ function cameraRig(){
  } else if(work==='depot'){
   target=[game.x-forward[0]*3.2,2.42,game.z-forward[1]*3.2];
  }
- let desired=[game.x+off[0],off[1],game.z+off[2]]; // Pick a curbside work camera with a clear sightline before considering a high roof view.
+ let desired=[game.x+off[0],off[1],game.z+off[2]];
+ // Pick a curbside work camera with a clear sightline before considering a high roof view.
  // This avoids the old bug where repeatedly shortening an obstructed ray put the camera
  // almost directly overhead, obscuring the gripper and bin contact.
  const h=heading,backDir=[-Math.sin(h),-Math.cos(h)],rightDir=[Math.cos(h),-Math.sin(h)];
@@ -1450,8 +1519,7 @@ function rasterDepth(a,indices,pv,step=1){
   }
   if(poly.length<3)continue;
   let N=a[i+3],NY=a[i+4],NZ=a[i+5];
-  let lit=Math.min(1.12,.57+.45*Math.max(0,N*(-.4)+NY*.85+NZ*.65));
-  let R=Math.min(255,Math.round(a[i+6]*255*lit)),G=Math.min(255,Math.round(a[i+7]*255*lit)),B=Math.min(255,Math.round(a[i+8]*255*lit));
+  let lit=Math.min(1.12,.57+.45*Math.max(0,N*(-.4)+NY*.85+NZ*.65));  let R=Math.min(255,Math.round(a[i+6]*255*lit)),G=Math.min(255,Math.round(a[i+7]*255*lit)),B=Math.min(255,Math.round(a[i+8]*255*lit));
   let p=poly.map(q=>xform([q.x,q.y,q.z]));
   for(let it=1;it<p.length-1;it++){
    let A=p[0],F=p[it],C=p[it+1];
@@ -1488,7 +1556,8 @@ function renderSoftware(){
  if(!softwareCtx)return;
  updateCamera();allocateDepth();const W=depthW,H=depthH,buf=depthImg.data;
  depthZ.fill(0);
- // Background gradient, intentionally matching the GPU sky/fog palette. for(let y=0;y<H;y++){
+ // Background gradient, intentionally matching the GPU sky/fog palette.
+ for(let y=0;y<H;y++){
   let q=y/H,r,g,b;
   if(q<.61){let u=q/.61;r=125+39*u;g=186+36*u;b=218+15*u;}
   else{let u=Math.min(1,(q-.61)/.39);r=127+12*u;g=187+19*u;b=117+10*u;}
