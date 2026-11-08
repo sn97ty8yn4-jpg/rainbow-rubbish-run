@@ -1,43 +1,29 @@
-# Rainbow Rubbish Run — Living Town v3
+# Rainbow Rubbish Run — Living Town v4.1: Sorting School
 
-A self-contained, offline, original 3D browser garbage-truck game for **Felix, Nora and Ferg**, designed for children approximately 3–5 years old.
+**Playable offline HTML game for Felix, Nora and Ferg (ages 3–5).** Open [index.html](./index.html) in a browser to play. No network assets, account or game installation is required.
 
-## Play
+## Latest features
 
-Open [index.html](./index.html) in a modern desktop or mobile browser. No npm, external models, network requests, or proprietary GTA files are required. The game tries WebGL first and uses its built-in depth-tested software renderer if WebGL fails.
+- All jobs now use a preschool-friendly rubbish-sorting mini-game. The old timing, latch and other reflex puzzles have been replaced.
+- **92 illustrated items**: 24 food scraps, 24 recycling, 20 garden waste, 24 general rubbish. Colours and pictures are prominent; speech cues are optional.
+- **Left/right arrows** choose one of four colour-coded bins; **SPACE** drops the object. Unlimited retries, gentle clues, no countdown.
+- Ferg begins with 2 objects per job; Felix and Nora get 3. New shifts increase difficulty slightly.
+- Three individually authored Australian side-loader truck variants: Felix Blue Recycler, Nora Unicorn Express and Ferg Dino Collector. The online repository's standalone HTML contains the baked vehicle and town geometry.
+- Detailed original Australian town scenery, expanded tree cover, kerbside bins, collision-checked houses and shops, GPS, pedestrians, traffic and landmarks.
+- 24 scheduled stops per shift, three players taking eight turns each; the route continues into new shifts and the depot is repeatable.
 
-### Controls
-- **↑** accelerate
-- **↓** brake / reverse
-- **← / →** steer (intentionally reversed relative to the older game builds, as requested by the player)
-- **SPACE** start jobs, solve puzzles and operate hydraulics
-- On phones, use the on-screen arrows and large SPACE button.
+## Controls
 
-Picture-first directions show a large flashing arrow, yellow GPS breadcrumbs, a highlighted road route, stop signs and work prompts. The sound button also enables/disables **Australian-English spoken instructions through the browser's local Web Speech API**, where the operating system provides compatible voices. Speech availability varies by browser/device.
+**↑ accelerate · ↓ brake/reverse · ←→ steer · SPACE work, sort, hand off.** Touch buttons are included.
 
-## Current gameplay
+## Test status
 
-- 24 scheduled jobs per shift, including 14–15 rubbish-bin pickups plus recycling, depots, wildlife and other tasks.
-- Felix → Nora → Ferg rotate after every scheduled task, with eight turns each per shift.
-- Continuing shifts and repeatable depot unloading when the truck fills.
-- Solid house and shop footprints: a separating-axis collision test keeps the truck outside buildings.
-- Guided/free steering, simulated truck suspension, side-loader lifting animation, rear unloading, traffic and Australian animals.
-- Suburban town with pitched roofs, fences, verandahs, parked cars, eucalyptus street trees and extra curbside wheelie bins.
-- Auto-save where local browser storage is available.
+Chromium automation validated a complete **76-job** sample across four shifts, sorting retries, the hydraulic collection animation, mobile 4-bin layout and zero detected JavaScript exceptions. Job progression was tested by positioning the truck at individual stops; it was not a manually driven full route. iPhone GPU performance and speech voices remain unverified.
 
-## Scope and limitations
+## Educational limitation
 
-This is an **original stylised game**, not GTA San Andreas or an SA asset port. The truck dynamics are approximated (not a full Rapier rigid-body simulation), hydraulic parts follow kinematic animation, and the WebGL fallback can be slower on limited hardware.
+These are deliberately simplified educational sorting streams. **Real Australian council rules vary**, particularly FOGO services that combine food and garden waste. Follow your local council's instructions for actual household collection.
 
-All in-game geometry is authored/procedural; the game does not contain Rockstar assets. An earlier photorealistic concept render is reference artwork only, not the in-game model.
+## Engineering limitation
 
-## Testing
-
-Automated Chromium regression checked steering direction, solid-building collision, the bin and depot puzzles, all 72 scheduled jobs across three shifts (24 tasks per child), desktop startup, mobile control bounds, no JavaScript exceptions and zero network requests.
-
-Those 72 automated tasks are **direct test placements**, not a complete manually driven route. The browser's presence of `speechSynthesis` was checked; audible voice quality and real iPhone/GPU performance remain to be tested on devices.
-
-## Repository
-
-This repository stores the directly playable `index.html`. More advanced Three.js/Rapier code and the 129-part GLB prototype remain separate development work until a live integrated engine build passes road tests.
-
+The shipped game uses original authored, stylised assets and baked GLB geometry in a custom WebGL/software renderer. It is **not GTA San Andreas** and does not yet contain a fully integrated Rapier physics engine or full PBR textures. The complete offline game ZIP, separately importable GLBs and regeneration scripts are distributed in the ChatGPT project release.
