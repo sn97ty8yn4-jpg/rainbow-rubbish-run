@@ -1,4 +1,4 @@
-<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Rainbow Rubbish Run — Hydraulic Realism v4.3 Sorting Adventure</title><style>
+<!doctype html><html lang="en-AU"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Rainbow Rubbish Run — Urban Visuals v4.4 Sorting Adventure</title><style>
 :root{--ink:#1b4556;--sun:#ffe17b;--green:#56c7a1}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#80c7e8;color:var(--ink);font-family:ui-rounded,'Trebuchet MS',system-ui,sans-serif;touch-action:none;user-select:none}#game{position:fixed;inset:0;width:100%;height:100%;display:block}#fade{position:fixed;inset:0;pointer-events:none;background:linear-gradient(180deg,#52b7e821,transparent 35%,#122e4e1d);z-index:1}#worldLabels{position:fixed;inset:0;pointer-events:none;z-index:3}.worldLabel{position:absolute;transform:translate(-50%,-50%);padding:5px 11px;border:2px solid white;background:#fffbe7ef;border-radius:18px;white-space:nowrap;font-weight:1000;font-size:clamp(12px,1.6vw,16px);box-shadow:0 4px 8px #153d4c33;display:none}#hud{display:none;position:fixed;z-index:4;inset:0;pointer-events:none}#top{position:absolute;left:14px;top:12px;border:3px solid white;background:#fffcf4ee;padding:8px 14px;border-radius:20px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 18px #21566932;max-width:min(480px,65vw)}#who{width:47px;height:47px;background:#d4f0ef;display:grid;place-items:center;border-radius:15px;font-size:31px}#playerName{font-size:22px;font-weight:1000}#dayName{font-size:12px;font-weight:900;color:#608089}#mission{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:#fffceced;border:3px solid white;padding:8px 14px;border-radius:19px;font-weight:1000;text-align:center;min-width:210px;max-width:26vw;box-shadow:0 8px 18px #21566926}#mission strong{display:block;font-size:16px}#mission small{display:block;font-size:12px}#topRight{position:absolute;right:13px;top:12px;display:flex;gap:7px;pointer-events:auto}#topRight button{border:2px solid white;border-radius:13px;background:#fffef4e8;color:#274c59;padding:10px 12px;font:900 14px ui-rounded,system-ui;cursor:pointer;min-height:44px;box-shadow:0 5px 10px #17445a25}#instrument{position:absolute;left:15px;top:88px;display:flex;gap:6px;flex-wrap:wrap;max-width:63vw}#instrument span{background:#fffef0e9;border:2px solid white;border-radius:12px;font-size:13px;font-weight:1000;padding:5px 9px;box-shadow:0 2px 9px #233d5027}#mapWrap{position:absolute;right:13px;top:69px;width:183px;height:183px;background:#fff9e9dd;border:4px solid #fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #17445235}#map{width:100%;height:100%}#centerMessage{position:absolute;bottom:132px;left:50%;transform:translateX(-50%);background:#fffdf0f2;border:3px solid white;border-radius:21px;padding:9px 18px;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis;text-align:center;font-size:clamp(15px,2.1vw,25px);font-weight:1000;box-shadow:0 7px 20px #1b385d31}#toast{position:absolute;left:50%;top:24%;transform:translateX(-50%) scale(.94);border:4px solid white;border-radius:24px;background:#ffefbaf5;padding:12px 25px;font-size:clamp(17px,2.6vw,27px);font-weight:1000;text-align:center;opacity:0;transition:opacity .15s,transform .15s;box-shadow:0 10px 25px #183a4d33;max-width:85vw}#toast.show{opacity:1;transform:translateX(-50%) scale(1)}#bottom{position:absolute;left:15px;right:15px;bottom:15px;display:flex;justify-content:space-between;align-items:end;gap:10px}#dpad{display:grid;grid-template-columns:repeat(3,59px);grid-template-rows:repeat(2,59px);gap:5px;pointer-events:auto}#dpad button{border:3px solid white;border-radius:18px;background:#fffdf3df;font-weight:1000;font-size:32px;color:#235165;cursor:pointer;box-shadow:inset 0 -5px #234a631c,0 7px 12px #16394e27;touch-action:none}#dpad button.pressed,#space.pressed{background:#b6f2c3;transform:translateY(3px)}#up{grid-column:2;grid-row:1;background:#fff0a7!important}#left{grid-column:1;grid-row:2}#down{grid-column:2;grid-row:2}#right{grid-column:3;grid-row:2}#action{display:flex;flex-direction:column;align-items:end;gap:6px;pointer-events:auto}#action small{border:2px solid white;background:#ffffe9e8;border-radius:12px;padding:6px 10px;font-size:12px;font-weight:1000;text-align:right}#space{min-width:min(35vw,200px);height:82px;border-radius:24px;border:5px solid white;background:#ffd76b;color:#5c4417;font-size:24px;font-weight:1000;box-shadow:inset 0 -8px #eab84c,0 8px 19px #5a391e33;touch-action:none;cursor:pointer}#puzzle{display:none;position:absolute;top:23%;left:50%;transform:translateX(-50%);width:min(580px,91vw);border:5px solid white;border-radius:28px;background:#fffcf2f5;padding:18px;text-align:center;box-shadow:0 16px 36px #25445d47}#puzzle.show{display:block}.puzzleTitle{font-size:clamp(20px,3.7vw,33px);font-weight:1000}.puzzleHint{font-size:clamp(14px,2vw,19px);font-weight:950;margin-top:10px}.choiceRow{display:flex;justify-content:center;gap:10px;margin:16px auto}.choice{background:#e7edf0;border:3px solid white;border-radius:16px;min-width:66px;padding:9px 10px;font-size:33px;font-weight:1000}.choice.active{background:#ffe89d;outline:4px solid #ffb84e;transform:scale(1.07)}.choice.target{box-shadow:inset 0 0 0 4px #57c585}.choice small{display:block;font-size:12px}.gauge{margin:18px auto 8px;width:85%;height:28px;background:#e3e4de;border:4px solid white;border-radius:19px;position:relative;box-shadow:inset 0 1px 5px #17324420}.gaugeGood{position:absolute;top:0;bottom:0;left:30%;width:43%;background:#88d89a;border-radius:10px}.gaugeNeedle{position:absolute;top:-7px;width:8px;height:34px;background:#f29054;border:2px solid #fff;border-radius:6px;box-shadow:0 1px 6px #3f3f3f77;transform:translateX(-50%)}.error{font-size:15px;color:#dd8056;font-weight:1000}#overlay{position:fixed;inset:0;z-index:7;display:flex;align-items:center;justify-content:center;padding:15px;background:linear-gradient(130deg,#7bd9fb9a,#fff0abbb);backdrop-filter:blur(7px)}.modal{width:min(750px,97vw);max-height:96vh;overflow:auto;border:5px solid white;border-radius:34px;background:#fffdf4f8;padding:clamp(14px,3vw,29px);box-shadow:0 25px 80px #20475b66;text-align:center}.logo{font-weight:1000;font-size:clamp(35px,6vw,65px);letter-spacing:-1.8px;line-height:1.04;color:#188d9c}.logo em{font-style:normal;color:#eeb54c}.subtitle{font-weight:900;color:#53777f;font-size:clamp(15px,1.8vw,19px);line-height:1.4;margin:12px auto}.faces{display:flex;gap:8px;justify-content:center;margin:15px auto}.face{flex:1;padding:9px;border:3px solid white;border-radius:20px;color:white;font-weight:1000;font-size:clamp(16px,2vw,23px)}.face span{display:block;font-size:34px}.bigBtn{font:1000 clamp(19px,2.6vw,28px) ui-rounded,system-ui;background:#ffd66c;color:#603f15;padding:14px 22px;border:0;border-radius:20px;width:min(400px,100%);box-shadow:inset 0 -6px #eba949;cursor:pointer}.mode{display:flex;justify-content:center;gap:10px;margin:10px auto}.mode button{border:3px solid white;border-radius:14px;padding:12px 19px;background:#e1edf3;font:900 17px ui-rounded,system-ui;cursor:pointer}.mode button.selected{background:#b9efc9;outline:3px solid #5cbb92}.instructions{background:#e9f6ed;padding:10px;border-radius:13px;font-weight:900;margin:10px auto;font-size:15px}.scores{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;margin:15px}.score{background:#e6f5eb;border:2px solid white;border-radius:15px;padding:8px 14px;font-weight:1000}.footnote{margin-top:11px;font-size:12px;color:#789195;font-weight:750}#errorScreen{display:none;position:fixed;inset:0;z-index:10;background:#fffcf2;padding:40px;font-size:20px}@media(max-width:850px){#mission{display:none}#mapWrap{width:120px;height:120px;top:65px}#instrument{top:82px;max-width:60vw}#instrument span{font-size:11px;padding:4px}#puzzle{top:22%;padding:10px}#top{left:6px;top:7px;padding:4px 7px;gap:5px}#who{width:40px;height:40px;font-size:26px}#playerName{font-size:18px}#dayName{font-size:10px}#topRight{right:5px;top:6px;gap:3px}#topRight button{min-height:38px;padding:7px;font-size:12px}#dpad{grid-template-columns:repeat(3,48px);grid-template-rows:repeat(2,48px);gap:4px}#dpad button{font-size:26px;border-radius:12px}#space{height:65px;min-width:130px;font-size:19px;border-radius:17px}#centerMessage{bottom:88px;font-size:14px;padding:6px 9px}#bottom{bottom:7px;left:7px;right:7px}#puzzle .choice{min-width:44px;padding:6px;font-size:24px}}@media(max-height:530px){#mapWrap{display:none}#instrument{display:none}#puzzle{top:21%;padding:6px}.choiceRow{margin:7px auto}.choice{padding:3px!important}#centerMessage{bottom:86px}.subtitle{margin:5px auto}.faces{margin:6px auto}}
 
 /* Less intrusive HUD; keep the road, the bin and the hydraulic arm visible. */
@@ -165,10 +165,14 @@ function decodePart(p){
 const ASSET_TRUCKS={};const ASSET_PREFABS={};
 for(const [key,parts] of Object.entries(ASSET_SOURCE.trucks))ASSET_TRUCKS[key]=parts.map(decodePart);
 for(const [key,parts] of Object.entries(ASSET_SOURCE.town))ASSET_PREFABS[key]=parts.map(decodePart);
+// Kenney Nature Kit (CC0 1.0): tiny audited subset, cm-quantized vertex positions.
+const KENNEY_CC0_TREES={"kenneyFat":[{"n":"kenney-fat-foliage","t":"fixed","c":[95,159,108],"pivot":[0,0,0],"p":"8f9ZABkA2v8jAAAA7f8jACEA2v8jAAAA8f9ZABkA4/9ZAAAAAABuAAAA4/9ZAAAA8f9ZABkADwBZAOf/8f9ZAOf/AABuAAAAHQBZAAAAAABuAAAADwBZABkA8f9ZAOf/EwAjAN//7f8jAN//EwAjAN//8f9ZAOf/DwBZAOf/DwBZABkA7f8jACEAEwAjACEA7f8jACEADwBZABkA8f9ZABkA8f8TAOb/8f8TABoA4/8TAAAA8f8TABoA8f8TAOb//P8TAPz//P8TAPz/8f8TAOb/DwATAOb//P8TAPz/DwATAOb/BAATAPz/BAATAPz/DwATAOb/BAATAAQA/P8TAAQA8f8TABoA/P8TAPz/8f8TABoA/P8TAAQADwATABoADwATABoA/P8TAAQABAATAAQADwATABoABAATAAQADwATAOb/DwATABoADwATAOb/HQATAAAADwATABoAJgAjAAAAEwAjACEAJgAjAAAADwATABoAHQATAAAA7f8jAN//4/8TAAAA2v8jAAAA4/8TAAAA7f8jAN//8f8TAOb/EwAjAN//HQBZAAAAJgAjAAAAHQBZAAAAEwAjAN//DwBZAOf/7f8jAN//DwATAOb/8f8TAOb/DwATAOb/7f8jAN//EwAjAN//JgAjAAAADwBZABkAEwAjACEADwBZABkAJgAjAAAAHQBZAAAAAABuAAAA8f9ZAOf/4/9ZAAAA2v8jAAAA8f8TABoA7f8jACEA8f8TABoA2v8jAAAA4/8TAAAADwBZABkAAABuAAAA8f9ZABkAEwAjACEA8f8TABoADwATABoA8f8TABoAEwAjACEA7f8jACEA8f9ZAOf/2v8jAAAA4/9ZAAAA2v8jAAAA8f9ZAOf/7f8jAN//DwATAOb/JgAjAAAAHQATAAAAJgAjAAAADwATAOb/EwAjAN//HQBZAAAADwBZAOf/AABuAAAA"},{"n":"kenney-fat-bark","t":"fixed","c":[130,99,67],"pivot":[0,0,0],"p":"/P8TAAQA+f/7//n/+f/7/wcA+f/7//n//P8TAAQA/P8TAPz//P8TAPz/BwD7//n/+f/7//n/BwD7//n//P8TAPz/BAATAPz/BwD7//n/BAATAAQABwD7/wcABAATAAQABwD7//n/BAATAPz/BwD7//n/+f/7/wcA+f/7//n/+f/7/wcABwD7//n/BwD7/wcABAATAAQA+f/7/wcABwD7/wcA+f/7/wcABAATAAQA/P8TAAQA"}],"kenneySimple":[{"n":"kenney-simple-foliage","t":"fixed","c":[95,166,123],"pivot":[0,0,0],"p":"CgCLAPr/AACLAPT/AACTAAAAAACLAPT/9v+LAPr/AACTAAAAAACTAAAA9v+LAPr/9v+LAAYA7v9tAPb/AABXAOz/7v9XAPb/AABXAOz/7v9tAPb/AABtAOz/7v9tAPb/7v9XAAoA7v9tAAoA7v9XAAoA7v9tAPb/7v9XAPb/EgBtAAoAAABXABQAEgBXAAoAAABXABQAEgBtAAoAAABtABQAEgBtAPb/CgCLAAYAEgBtAAoACgCLAAYAEgBtAPb/CgCLAPr/9v9SAPr/7v9XAAoA7v9XAPb/7v9XAAoA9v9SAPr/9v9SAAYAAABSAPX/9v9SAAYA9v9SAPr/9v9SAAYAAABSAPX//f9SAP3//f9SAP3/AABSAPX/AwBSAP3/AwBSAP3/AABSAPX/CgBSAPr/AwBSAP3/CgBSAPr/AwBSAAMA/f9SAAMA9v9SAAYA/f9SAP3/9v9SAAYA/f9SAAMAAABSAAsAAABSAAsA/f9SAAMAAwBSAAMAAABSAAsAAwBSAAMACgBSAAYACgBSAAYAAwBSAAMACgBSAPr/CgBSAAYAAABXABQAAABSAAsAAABXABQACgBSAAYAEgBXAAoA9v9SAAYAAABXABQA7v9XAAoAAABXABQA9v9SAAYAAABSAAsAAABtABQA7v9XAAoAAABXABQA7v9XAAoAAABtABQA7v9tAAoACgCLAAYAAACTAAAAAACLAAwAAACLAPT/EgBtAPb/AABtAOz/EgBtAPb/AACLAPT/CgCLAPr/AACLAAwA7v9tAAoAAABtABQA7v9tAAoAAACLAAwA9v+LAAYAEgBXAPb/CgBSAAYACgBSAPr/CgBSAAYAEgBXAPb/EgBXAAoAAABXAOz/9v9SAPr/7v9XAPb/9v9SAPr/AABXAOz/AABSAPX/EgBXAPb/AABSAPX/AABXAOz/AABSAPX/EgBXAPb/CgBSAPr/EgBXAPb/EgBtAAoAEgBXAAoAEgBtAAoAEgBXAPb/EgBtAPb/9v+LAPr/AABtAOz/7v9tAPb/AABtAOz/9v+LAPr/AACLAPT/AABtAOz/EgBXAPb/AABXAOz/EgBXAPb/AABtAOz/EgBtAPb/9v+LAAYA7v9tAPb/7v9tAAoA7v9tAPb/9v+LAAYA9v+LAPr/CgCLAAYAAABtABQAEgBtAAoAAABtABQACgCLAAYAAACLAAwAAACTAAAA9v+LAAYAAACLAAwACgCLAPr/AACTAAAACgCLAAYA"},{"n":"kenney-simple-bark","t":"fixed","c":[138,103,72],"pivot":[0,0,0],"p":"BAD7//z//P/7/wQA/P/7//z//P/7/wQABAD7//z/BAD7/wQAAwBSAAMA/P/7/wQABAD7/wQA/P/7/wQAAwBSAAMA/f9SAAMABAD7//z/AwBSAAMABAD7/wQAAwBSAAMABAD7//z/AwBSAP3//f9SAP3/BAD7//z//P/7//z/BAD7//z//f9SAP3/AwBSAP3//f9SAAMA/P/7//z//P/7/wQA/P/7//z//f9SAAMA/f9SAP3/"}]};
+for(const [key,parts] of Object.entries(KENNEY_CC0_TREES))ASSET_PREFABS[key]=parts.map(decodePart);
+
 function materialAsset(m,parts,tx,tz,ry=0,scale=1,anim=null){
  const C=Math.cos(ry),S=Math.sin(ry);
- for(const part of parts){  const coords=part.coords, name=part.n, wheelTag=name.match(/_(front|middle|rear)_(L|R)/);
-  // Original GLB panels/wheels remain; the separate joint solver owns the bin-lifting rig.
+ for(const part of parts){
+  const coords=part.coords, name=part.n, wheelTag=name.match(/_(front|middle|rear)_(L|R)/);  // Original GLB panels/wheels remain; the separate joint solver owns the bin-lifting rig.
   if(anim?.hideHydraulics&&(name.startsWith('arm_')||name.startsWith('gripper_')))continue;
   const wheelZ=wheelTag?(wheelTag[1]==='front'?2.08:wheelTag[1]==='middle'?-1.64:-2.75):0;
   const wheelCx=wheelTag?(wheelTag[2]==='L'?-1.185:1.185):0;
@@ -253,7 +257,31 @@ let gl,shader,glOK=false,bufStatic,bufDynamic,nStatic=0,glLoc={},width=0,height=
 function compile(type,source){let s=gl.createShader(type);gl.shaderSource(s,source);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw Error('Shader: '+gl.getShaderInfoLog(s));return s}
 function initGL(){gl=canvas.getContext('webgl',{antialias:true,alpha:false,depth:true,powerPreference:'high-performance'})||canvas.getContext('experimental-webgl');if(!gl)return false;
 let vert=`attribute vec3 p;attribute vec3 n;attribute vec3 c;uniform mat4 pv;varying mediump vec3 worldPos;varying mediump vec3 normal;varying mediump vec3 baseColor;void main(){worldPos=p;normal=n;baseColor=c;gl_Position=pv*vec4(p,1.0);}`;
-let frag=`precision mediump float;uniform vec3 camera;varying mediump vec3 worldPos;varying mediump vec3 normal;varying mediump vec3 baseColor;float grain(vec2 v){return fract(sin(dot(floor(v),vec2(127.13,311.71)))*43758.54);}void main(){vec3 N=normalize(normal),L=normalize(vec3(-0.52,0.88,0.45)),V=normalize(camera-worldPos),H=normalize(L+V);float diffuse=max(dot(N,L),0.0);float fill=0.64+0.36*diffuse;float bevel=pow(max(dot(N,H),0.0),34.0)*0.16;float surface=grain(worldPos.xz*12.0)*0.018;vec3 lit=baseColor*(fill+surface)+vec3(bevel);vec3 sky=vec3(0.69,0.83,0.91);float fog=clamp((distance(camera,worldPos)-48.0)/156.0,0.0,0.83);gl_FragColor=vec4(mix(lit,sky,fog),1.0);}`;
+let frag=`precision mediump float;
+uniform vec3 camera;
+varying mediump vec3 worldPos;
+varying mediump vec3 normal;
+varying mediump vec3 baseColor;
+float hash2(vec2 v){return fract(sin(dot(floor(v),vec2(127.13,311.71)))*43758.54);}
+void main(){
+ vec3 N=normalize(normal),L=normalize(vec3(-0.57,0.78,0.36)),V=normalize(camera-worldPos),H=normalize(L+V);
+ float sunlight=max(dot(N,L),0.0),rim=pow(max(dot(N,H),0.0),28.0)*0.092;
+ float nearGround=1.0-smoothstep(0.3,1.2,worldPos.y);
+ float asphalt=step(0.25,baseColor.r)*step(baseColor.r,0.53)*step(0.28,baseColor.g)*step(baseColor.g,0.56)*step(0.3,baseColor.b)*step(baseColor.b,0.60)*nearGround;
+ float foliage=step(baseColor.r+0.08,baseColor.g)*step(baseColor.b+0.025,baseColor.g);
+ float nearLawn=foliage*nearGround;
+ float coarse=hash2(worldPos.xz*4.3)-0.5;
+ float fine=hash2(worldPos.xz*21.0)-0.5;
+ float surface=asphalt*(coarse*0.047+fine*0.030)+nearLawn*(coarse*0.065+fine*0.024);
+ float plaster=(1.0-nearGround)*(1.0-foliage)*(hash2(worldPos.xz*9.0+worldPos.y*3.0)-0.5)*0.012;
+ vec3 base=clamp(baseColor+vec3(surface+plaster),0.0,1.0);
+ float diffuse=0.55+0.43*sunlight;
+ vec3 warmSun=vec3(1.04,1.01,0.96),skyFill=vec3(0.05,0.085,0.11);
+ vec3 lit=base*diffuse*warmSun+skyFill*(0.36+0.18*max(N.y,0.0))+vec3(rim);
+ float fog=clamp((distance(camera,worldPos)-38.0)/166.0,0.0,0.78);
+ vec3 horizon=vec3(0.73,0.84,0.88);
+ gl_FragColor=vec4(mix(lit,horizon,fog),1.0);
+}`;
 shader=gl.createProgram();gl.attachShader(shader,compile(gl.VERTEX_SHADER,vert));gl.attachShader(shader,compile(gl.FRAGMENT_SHADER,frag));gl.linkProgram(shader);if(!gl.getProgramParameter(shader,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(shader));gl.useProgram(shader);
 glLoc={p:gl.getAttribLocation(shader,'p'),n:gl.getAttribLocation(shader,'n'),c:gl.getAttribLocation(shader,'c'),pv:gl.getUniformLocation(shader,'pv'),camera:gl.getUniformLocation(shader,'camera')};gl.enable(gl.DEPTH_TEST);gl.depthFunc(gl.LEQUAL);gl.disable(gl.CULL_FACE);bufStatic=gl.createBuffer();bufDynamic=gl.createBuffer();glOK=true;return true}
 // WebGL and 2D canvas contexts cannot coexist on one canvas. Replace the failed
@@ -292,6 +320,9 @@ function shop(m,x,z,i){
 }
 function houseDetailed(m,x,z,i){house(m,x,z,i)}
 function roadsideEucalypt(m,x,z,scale=1,id=0){
+ // Replace, never stack, selected original street trees with small CC0 imported meshes.
+ if(id%11===0){drawPrefab(m,'kenneySimple',x,z,(id%5)*.63,scale*4.9);return;}
+ if(id%7===0){drawPrefab(m,'kenneyFat',x,z,(id%5)*.63,scale*4.3);return;}
  drawPrefab(m,id%3===0?'gum2':'gum',x,z,(id%5)*.63,scale);
 }
 function streetLamp(m,x,z,angle=0){m.cylinder(x,3,z,.11,6,'#5d6975',8);m.bar([x,5.9,z],[x+Math.cos(angle)*1.4,5.9,z+Math.sin(angle)*1.4],.12,'#536774');m.ellipsoid(x+Math.cos(angle)*1.4,5.7,z+Math.sin(angle)*1.4,.41,.24,.41,'#fff2ab',8,4)}
@@ -301,6 +332,32 @@ function merino(m,x,z){m.box(x,.6,z,20,1.2,14,'#e9bf9d');for(let dx of [-3.0,3.0
 function pineapple(m,x,z){m.box(x,.6,z,15,1.2,15,'#eec3a4');m.ellipsoid(x,7.0,z,4.7,7.1,4.7,'#f0bd54',12,10);for(let i=0;i<70;i++){let a=i*2.4,h=2.0+(i%10)*1.04,rr=Math.sqrt(Math.max(.1,1-((h-7)/7.3)**2))*4.55;m.ellipsoid(x+Math.cos(a)*rr,h,z+Math.sin(a)*rr,.35,.5,.25,i%2?'#dba444':'#ffda72',6,3)}for(let i=0;i<11;i++){let a=i*TAU/11,xx=x+Math.cos(a)*.65,zz=z+Math.sin(a)*.65;m.bar([xx,12.8,zz],[x+Math.cos(a)*3,17.4+(i%3),z+Math.sin(a)*2.6],.58,'#58a376',7)}}
 function koala(m,x,z){m.box(x,.6,z,16,1.2,14,'#e9d4b8');m.ellipsoid(x,7.6,z,5.1,5.1,4.8,'#9baab5',12,8);for(let s of [-1,1]){m.ellipsoid(x+s*4.65,10,z,.2+2.0,2.35,1.9,'#9daeb9',10,6);m.ellipsoid(x+s*4.75,10.2,z+.9,1.25,1.55,.95,'#e8bac4',8,5);m.ellipsoid(x+s*2.1,8.5,z+4.1,1.17,1.3,.35,'#ffffff',8,5);m.ellipsoid(x+s*2.1,8.45,z+4.5,.36,.59,.21,'#2a4754',8,4)}m.ellipsoid(x,7.0,z+4.9,1.35,2,1.05,'#344750',10,6);m.ellipsoid(x,4.3,z+3.8,2.3,.8,.65,'#e5d9d0',9,4)}
 const LANDMARKS=[{name:'BIG BANANA',emoji:'🍌',x:-96,z:-96,top:13,kind:'banana'},{name:'BIG MERINO',emoji:'🐏',x:96,z:96,top:12,kind:'merino'},{name:'BIG PINEAPPLE',emoji:'🍍',x:96,z:-96,top:14,kind:'pineapple'},{name:'BIG KOALA',emoji:'🐨',x:-96,z:96,top:12,kind:'koala'}];
+
+// Cheap static prop prefabs; all stay outside 6.6 m road lanes so the truck cannot hit hidden blockers.
+function addUrbanDetails(m){
+ for(let a=0;a<GRID.length-1;a++)for(let b=0;b<GRID.length-1;b++){
+  const x=(GRID[a]+GRID[a+1])/2,z=(GRID[b]+GRID[b+1])/2,seed=a*17+b*29;
+  if((a+b)%4===0){
+   // Commercial blocks: low awnings, sign strips and short bollards—not giant signboards.
+   const c=['#e3bd7c','#92adbc','#c79583','#a8b6a7'][seed%4];
+   m.box(x+6.0,2.65,z-10.1,2.2,.25,1.05,c);
+   m.box(x+6.0,3.05,z-10.15,2.4,.48,.10,'#e7e0cd');
+   m.box(x+9.3,.45,z+9.9,.52,.88,.50,'#667c80');
+   m.box(x+9.3,.93,z+9.9,.62,.12,.60,'#b3c4ba');
+  }else if((a+b)%3===0){
+   // Letterbox and covered recycling crate at the garden edge.
+   m.cylinder(x-10.0,.47,z+10.7,.055,.85,'#5f7376',6);   m.box(x-10.0,.96,z+10.7,.55,.29,.45,'#d7e2dd');
+   m.box(x+9.6,.32,z-9.9,.80,.55,.75,'#4e807c');
+   m.box(x+9.6,.62,z-9.9,.91,.10,.86,'#2a4c50');
+  }
+ }
+ // Four clear, distinct roadside landmarks which help children navigate, placed off the driving lanes.
+ for(const [x,z] of [[-58,-58],[58,-58],[-58,58],[58,58]]){
+   m.box(x,.72,z,.25,1.4,.25,'#67737b');
+   m.box(x,1.6,z,1.05,.82,.15,'#e7d2a4');
+   m.box(x,1.62,z+.10,.74,.38,.12,'#8f9e83');
+ }
+}
 function roadWorld(){let m=new Mesh();m.box(0,-.72,0,290,1.35,290,COL.grass);
 // Multi-block street network and sidewalks
 for(let k of GRID)for(let v=-128;v<128;v+=16){let at=v+8;m.box(k,.015,at,13.8,.10,16,COL.foot);m.box(k,.045,at,10.6,.16,16,COL.road);m.box(at,.012,k,16,.10,13.8,COL.foot);m.box(at,.049,k,16,.16,10.6,COL.road)}
@@ -336,7 +393,8 @@ for(let i=0;i<52;i++){
 }
 // Outside town: paddocks, rows of colorful trees, a few hillocks
 for(let i=0;i<90;i++){let a=rng(i+12)*TAU,r=125+rng(i+52)*16,x=Math.cos(a)*r,z=Math.sin(a)*r;if(Math.abs(x)<111&&Math.abs(z)<111)continue;if(i%4===0)m.ellipsoid(x,-.25,z,6+rng(i)*5,1.5+rng(i+3)*2.5,7,'#88c57b',8,4);else tree(m,x,z,.6+rng(i+5)*.8,['#f0b0d8','#d6abed','#aedb79','#ffcf72'][i%4],i%4)}
-// Street trees; mix blossom canopies like the supplied renderfor(let a of GRID)for(let i=-80;i<=80;i+=24){if(GRID.some(q=>Math.abs(q-i)<10))continue;let variant=(Math.floor(i/15)+Math.floor(a/32)+24)%4;for(let off of [-10.0,10.0]){let xx=(i+((i*a)%3)),zz=a+off;if(Math.abs(xx)<114&&Math.abs(zz)<114)tree(m,xx,zz,.85+rng(xx+zz)*.4,['#df9ce0','#f5c45a','#a1d477','#e7a0e2'][variant],variant===1?3:0)}}
+// Street trees; mix blossom canopies like the supplied render
+for(let a of GRID)for(let i=-80;i<=80;i+=24){if(GRID.some(q=>Math.abs(q-i)<10))continue;let variant=(Math.floor(i/15)+Math.floor(a/32)+24)%4;for(let off of [-10.0,10.0]){let xx=(i+((i*a)%3)),zz=a+off;if(Math.abs(xx)<114&&Math.abs(zz)<114)tree(m,xx,zz,.85+rng(xx+zz)*.4,['#df9ce0','#f5c45a','#a1d477','#e7a0e2'][variant],variant===1?3:0)}}
 
 // Additional native roadside shade trees, garden trees and planted avenue strips.
 for(let a=0;a<GRID.length-1;a++)for(let b=0;b<GRID.length-1;b++){
@@ -360,6 +418,7 @@ let x=-86,z=0;/* open-air unloading bay: keep the truck visible during discharge
 x=83;z=0;for(let s of [-5.5,5.5]){m.cylinder(x+s,3.6,z,.2,7,'#65bcd0',8);m.bar([x-5.5,7,z],[x+5.5,7,z],.33,'#80d2df')}for(let j=0;j<10;j++)m.ellipsoid(x-5+j*1.05,6.35,z,.3,.35,.3,'#eafaff',7,4);
 m.ellipsoid(0,.1,83,15,.19,7,'#86d4e1',20,3);for(let i=0;i<22;i++){let t=i*TAU/22,r=10+rng(i)*5;tree(m,Math.cos(t)*r,83+Math.sin(t)*5,.8,['#e6b1dd','#b5e68d','#f6d67b'][i%3],i%3)}
 for(let i=0;i<110;i++){let x=rng(i+113)*248-124,z=rng(i+307)*248-124;if(!GRID.some(v=>Math.abs(x-v)<8||Math.abs(z-v)<8)){let c=['#fae9a7','#f7a6d7','#e4ebff'][i%3];m.ellipsoid(x,.22,z,.18,.26,.2,c,6,3)}}
+addUrbanDetails(m);
 // Dedicated depot: unloading apron with sorting bays and safety stanchions, away from the working rear door.
   m.box(-72,.12,-5,18,.15,17,'#c3c6bb');
   for(let q=0;q<7;q++){
@@ -461,8 +520,7 @@ function binInGripper(m,x,z,yaw,state){
   m.ellipsoid(...wheel,.16,.16,.16,'#2d3b43',8,5);
  }
 }
-function sideLift3D(m,x,z,yaw,state){
- const ext=state.extension,lift=state.lift,X=state.tipX,Y=state.tipY,Z=state.tipZ;
+function sideLift3D(m,x,z,yaw,state){ const ext=state.extension,lift=state.lift,X=state.tipX,Y=state.tipY,Z=state.tipZ;
  const P=(lx,ly,lz=0)=>pt(x,z,yaw,lx,ly,lz);
  // Fixed lift tower and guideways (no telescoping/detached beams).
  for(const side of [-1,1]){
@@ -505,7 +563,8 @@ function sideLift3D(m,x,z,yaw,state){
      const q=P(.90+u*.22,4.25-u*.90, Z+(rng(i+14)-.5)*.75);
      m.box(...q,.18,.18,.17,['#d4ab73','#8ebd8c','#d9aa9b','#c5d2b0'][i%4]);
     }
-   } }
+   }
+ }
 }
 function rearUnload3D(m,x,z,yaw){
  let a=game.animation,active=game.screen==='animation'&&a?.type==='depot',t=active?clamp(a.t,0,1):0;
@@ -635,8 +694,7 @@ function collisionCarsOBB(){
    const sep=Math.abs(dx*axis[0]+dz*axis[1]);const overlap=rT+rC-sep;
    if(overlap<=0){hit=false;break}
    if(overlap<smallest){smallest=overlap;const sign=(dx*axis[0]+dz*axis[1])>=0?1:-1;normAxis=[axis[0]*sign,axis[1]*sign]}
-  }
-  if(!hit||!normAxis)continue;
+  }  if(!hit||!normAxis)continue;
   // Mass-weighted positional correction, with the compact car displaced more than the refuse truck.
   const corr=Math.min(smallest+.02,1.4),truckFrac=c.m/(T.m+c.m),carFrac=T.m/(T.m+c.m);
   game.x-=normAxis[0]*corr*truckFrac;game.z-=normAxis[1]*corr*truckFrac;
@@ -674,7 +732,8 @@ function rb(m,x,z,yaw,lx,ly,lz,w,h,d,col){
     a.push(rigidPoint(x,z,yaw,lx+i*w*.5,ly+j*h*.5,lz+k*d*.5));
   for(const f of [[0,3,2,1],[4,5,6,7],[0,4,7,3],[1,2,6,5],[3,7,6,2],[0,1,5,4]])m.quad(...f.map(i=>a[i]),col);
 }
-function rbar(m,x,z,yaw,a,b,r,col,n=7){m.bar(rigidPoint(x,z,yaw,...a),rigidPoint(x,z,yaw,...b),r,col,n)}function rquad(m,x,z,yaw,coords,c){m.quad(...coords.map(v=>rigidPoint(x,z,yaw,...v)),c)}
+function rbar(m,x,z,yaw,a,b,r,col,n=7){m.bar(rigidPoint(x,z,yaw,...a),rigidPoint(x,z,yaw,...b),r,col,n)}
+function rquad(m,x,z,yaw,coords,c){m.quad(...coords.map(v=>rigidPoint(x,z,yaw,...v)),c)}
 function rtriangle(m,x,z,yaw,coords,c){m.tri(...coords.map(v=>rigidPoint(x,z,yaw,...v)),c)}
 function rball(m,x,z,yaw,a,b,c,ra,rb,rc,col,n=10){let p=rigidPoint(x,z,yaw,a,b,c);m.ellipsoid(...p,ra,rb,rc,col,n,5)}
 function rWheel(m,x,z,yaw,lx,lz,index){
@@ -809,8 +868,7 @@ function engineeredTruck3D(m,x,z,yaw){
   for(const xx of [-1.44,1.44])rb(m,x,z,yaw,xx,1.04,4.48,.36,.34,.15,'#c6cbcb');
   // Carbon-filled rubber guards; rear fenders follow the three suspension stations.
   for(const xx of [-1.91,1.91])for(const zz of [-2.92,-1.45,2.50]){
-    for(let q=0;q<6;q++){
-      const theta=Math.PI*.08+q*Math.PI*.84/5;
+    for(let q=0;q<6;q++){      const theta=Math.PI*.08+q*Math.PI*.84/5;
       rb(m,x,z,yaw,xx,1.00+Math.sin(theta)*.74,zz+Math.cos(theta)*.78,.17,.13,.29,'#333c41');
     }
   }
@@ -843,7 +901,8 @@ function engineeredTruck3D(m,x,z,yaw){
   for(let i=0;i<5;i++)rbar(m,x,z,yaw,[1.75,2.60,.37+i*.14],[1.83,1.86,.25+i*.14],.024,'#2a3538',5);
   for(let q=0;q<game.fill&&q<8;q++)rb(m,x,z,yaw,(rng(q*6)-.5)*2.0,2.61,(rng(q+4)-.5)*1.2,.36,.19,.29,['#c6b79a','#a1b8a7','#d3a9b3'][q%3]);
   // Rear ejector machinery and releaseable tailgate.
-  rb(m,x,z,yaw,0,2.25,-4.07,3.45,2.43,.20,'#3b7c47');  for(let side of [-1,1])rbar(m,x,z,yaw,[side*1.52,1.12,-4.20],[side*1.52,3.61,-4.19],.065,'#f6e4a2');
+  rb(m,x,z,yaw,0,2.25,-4.07,3.45,2.43,.20,'#3b7c47');
+  for(let side of [-1,1])rbar(m,x,z,yaw,[side*1.52,1.12,-4.20],[side*1.52,3.61,-4.19],.065,'#f6e4a2');
   for(let i=0;i<7;i++)rb(m,x,z,yaw,-1.25+i*.4,1.03,-4.37,.32,.16,.09,i%2?'#d84b46':'#fff4df');
   for(const s of [-1,1])rb(m,x,z,yaw,s*1.38,1.48,-4.45,.28,.35,.10,'#cf5451');
   hydraulicSideLifter(m,x,z,yaw,loaderState());
@@ -983,8 +1042,7 @@ const SORT_BINS=[
 ];
 const WASTE_LIBRARY={
  food:[
-  ['🍌','Banana peel'],['🍎','Apple core'],['🍐','Pear core'],['🍊','Orange peel'],['🍓','Strawberry tops'],
-  ['🍉','Watermelon rind'],['🍇','Grape stems'],['🥕','Carrot peels'],['🥔','Potato peels'],['🥦','Broccoli stalk'],
+  ['🍌','Banana peel'],['🍎','Apple core'],['🍐','Pear core'],['🍊','Orange peel'],['🍓','Strawberry tops'],  ['🍉','Watermelon rind'],['🍇','Grape stems'],['🥕','Carrot peels'],['🥔','Potato peels'],['🥦','Broccoli stalk'],
   ['🌽','Corn cob'],['🍞','Bread crust'],['🥚','Eggshells'],['🍚','Leftover rice'],['🍝','Leftover pasta'],
   ['🧀','Cheese scraps'],['🥬','Lettuce scraps'],['🍅','Tomato scraps'],['🍍','Pineapple skin'],
   ['🍑','Peach stone'],['🥒','Cucumber ends'],['🥑','Avocado skin'],['🍋','Lemon peel'],['🍄','Mushroom scraps'],['🥭','Mango peel'],['🍅','Capsicum tops'],['🥗','Leftover salad'],['🥥','Coconut scraps'],
@@ -1012,7 +1070,8 @@ const WASTE_LIBRARY={
  ],
  general:[
   ['🧽','Old sponge'],['🪥','Old toothbrush'],['✏️','Broken pencil'],['🖍️','Broken crayons'],
-  ['🩹','Used plaster'],['🧦','Worn-out sock'],['🧤','Old rubber glove'],['🎈','Burst balloon'],  ['🧸','Broken soft toy'],['📎','Small mixed-material clip'],['🧽','Worn cleaning pad'],
+  ['🩹','Used plaster'],['🧦','Worn-out sock'],['🧤','Old rubber glove'],['🎈','Burst balloon'],
+  ['🧸','Broken soft toy'],['📎','Small mixed-material clip'],['🧽','Worn cleaning pad'],
   ['🧼','Old soap wrapper'],['🧻','Used tissue'],['🧼','Broken soap dish'],['🥤','Broken plastic straw'],
   ['🩴','Broken thong'],['🎀','Worn ribbon'],['🧴','Empty toothpaste tube'],['📸','Damaged photograph'],
   ['🧹','Old broom bristles'],['🧸','Torn toy stuffing'],['🕶️','Broken sunglasses'],['👟','Worn-out shoe'],
@@ -1157,8 +1216,7 @@ $('puzzle').classList.toggle('show',game.screen==='task');if(game.screen==='task
 if(game.screen==='drive'){$('space').textContent='SPACE';if(c.j&&['bin','bulky'].includes(c.j.type)&&c.d<=9&&isParked()&&!collectionTarget(c.j).accessible){$('centerMessage').textContent='🦾 ➡️ BIN ON RIGHT • ↔️ PARK CLOSE';$('actionHint').textContent='ALIGN ARM'}else if(c.d<=9&&!isParked()){$('centerMessage').textContent='🛑 ⬇️ STOP';$('actionHint').textContent='STOP'}else if(c.d<=9){$('centerMessage').textContent='🛑 ✨ SPACE';$('actionHint').textContent='WORK'}else{$('centerMessage').textContent='🟡 FOLLOW ARROW + YELLOW LINE';$('actionHint').textContent='GO'}}else if(game.screen==='task'){$('centerMessage').textContent='⬅️➡️ + ✨';$('actionHint').textContent='PUZZLE';$('space').textContent='SPACE ✨'}else{$('centerMessage').textContent=game.animation?.type==='depot'?(game.animation.t<.34?'🔓 OPENING':game.animation.t<.73?'🏭 PUSHING OUT':'🔧 CLOSING'):(['bin','bulky'].includes(game.animation?.type)?({extending:'🦾 REACH',gripping:'🦾 GRIP',retracting:'↔️ PULL IN',lifting:'⬆️ LIFT',tipping:'🗑️ TIP',shaking:'🗑️ SHAKE',righting:'🦾 STRAIGHTEN',lowering:'⬇️ LOWER',returning:'🗑️ TO KERB',releasing:'🦾 RELEASE',stowing:'↩️ STOW'}[loaderState().phase]||'🦾 WORKING'):'✨ WORKING!');$('actionHint').textContent='GREAT JOB';$('space').textContent='⭐'}}
 function press(key){if(!['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(key))return;
 if(['intro','handoff'].includes(game.screen)){if(key==='ArrowLeft'||key==='ArrowRight'){setMode(game.mode==='free'?'guided':'free');return}if(key==='Space'){start();return}}else if(game.screen==='shiftbreak'){if(key==='Space')start()}else if(game.screen==='paused'){if(key==='Space')resume()}else if(game.screen==='task')handlePuzzle(key);else if(game.screen==='drive'&&key==='Space')beginTask()}
-function toggleCam(){game.camera=game.camera==='chase'?'cinematic':'chase';toast(game.camera==='chase'?'📷 CHASE CAMERA':'📷 CINEMATIC CAMERA',1200);save()}
-function resume(){overlay.style.display='none';hud.style.display='block';game.screen=game.pausedScreen||'drive';keys.clear();updateHUD()}
+function toggleCam(){game.camera=game.camera==='chase'?'cinematic':'chase';toast(game.camera==='chase'?'📷 CHASE CAMERA':'📷 CINEMATIC CAMERA',1200);save()}function resume(){overlay.style.display='none';hud.style.display='block';game.screen=game.pausedScreen||'drive';keys.clear();updateHUD()}
 function showHelp(){if(!['drive','task'].includes(game.screen))return;game.pausedScreen=game.screen;game.screen='paused';game.v=0;keys.clear();modal(`<div class="logo">🚛 Driver School</div><div class="subtitle">Follow the yellow line, stop by the glowing ring and press SPACE to work.</div>${modePicker()}<div class="instructions">⬆️ GO · ⬇️ STOP / BACK · ⬅️➡️ TURN · ✨ SPACE</div><div class="subtitle">🟡 Follow the arrow and yellow map line.<br>🛑 Stop in the glowing circle.<br>✨ Press SPACE to empty bins.<br>🏠 Houses are solid, so stay on the road.</div><button class="bigBtn" id="resume">SPACE ▶ BACK TO DRIVING</button>`);$('resume').onclick=resume}
 $('modeButton').onclick=()=>setMode(game.mode==='guided'?'free':'guided');$('cameraButton').onclick=toggleCam;$('helpButton').onclick=showHelp;$('soundButton').onclick=()=>{muted=!muted;$('soundButton').textContent=muted?'🔇':'🔊';if(muted&&window.speechSynthesis)try{window.speechSynthesis.cancel()}catch(_){};if(!muted){audioOn();sayForKids('Sound on. Follow the big arrow!',true)}};
 window.addEventListener('keydown',e=>{let k=e.key===' '?'Space':e.key;if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(k)){e.preventDefault();if(!keys.has(k)){keys.add(k);press(k)}}});window.addEventListener('keyup',e=>{let k=e.key===' '?'Space':e.key;onRelease(k);keys.delete(k)});window.addEventListener('blur',()=>{keys.clear();game.v=0;game.steer=0;save()});document.addEventListener('visibilitychange',()=>{if(document.hidden){keys.clear();game.v=0;game.steer=0;save()}});
@@ -1181,7 +1239,8 @@ function collisionScenery(){
  if(game.screen!=='drive')return;
  const axes=h=>[[Math.cos(h),-Math.sin(h)],[Math.sin(h),Math.cos(h)]];
  const A=axes(game.heading),halfW=1.26,halfL=3.64;
- let touched=false; // Iterative separating-axis collision solver for the truck footprint vs each actual house/shop.
+ let touched=false;
+ // Iterative separating-axis collision solver for the truck footprint vs each actual house/shop.
  for(let iter=0;iter<4;iter++){
   let contact=null;
   for(const b of cameraSolids){
@@ -1331,8 +1390,7 @@ function roadRoute(start,finish){
  const z0=onVertical?gridAhead(start.z,finish.z):nearestZ;
  let way=[{x:start.x,z:start.z}],x=x0,z=z0;
  // Join the closest street at an accessible junction. Never use diagonal through a block.
- if(Math.abs(start.x-x0)<Math.abs(start.z-z0))way.push({x:x0,z:start.z});else way.push({x:start.x,z:z0});
- way.push({x,z});
+ if(Math.abs(start.x-x0)<Math.abs(start.z-z0))way.push({x:x0,z:start.z});else way.push({x:start.x,z:z0}); way.push({x,z});
  let ix=GRID.indexOf(x),iz=GRID.indexOf(z),gx=GRID.indexOf(x1),gz=GRID.indexOf(z1);
  if(ix<0||iz<0||gx<0||gz<0)return way.concat([{x:finish.x,z:finish.z}]);
  // Keep directions simple and deterministic; avoid switchbacks and diagonals.
@@ -1350,7 +1408,8 @@ function computeGPS(){
  if(GPS.goalKey!==key||!Number.isFinite(GPS.lastX)||Math.hypot(game.x-GPS.lastX,game.z-GPS.lastZ)>12){
   GPS.path=roadRoute(game,j);GPS.goalKey=key;GPS.lastX=game.x;GPS.lastZ=game.z;
  }
- // Remove waypoints passed in the player's current direction without prematurely skipping the destination. while(GPS.path.length>2&&Math.hypot(game.x-GPS.path[1].x,game.z-GPS.path[1].z)<7)GPS.path.splice(0,1);
+ // Remove waypoints passed in the player's current direction without prematurely skipping the destination.
+ while(GPS.path.length>2&&Math.hypot(game.x-GPS.path[1].x,game.z-GPS.path[1].z)<7)GPS.path.splice(0,1);
  return GPS.path;
 }
 function navigationInstruction(){
@@ -1376,9 +1435,9 @@ function drawLabels(){for(let l of LANDMARKS){let d=Math.hypot(l.x-game.x,l.z-ga
 function cameraFollowOffset(){
  const h=game.heading,bx=-Math.sin(h),bz=-Math.cos(h),rx=Math.cos(h),rz=-Math.sin(h);
  const work=game.screen==='animation'?game.animation?.type:game.screen==='task'?game.task?.job.type:'';
- let back=10.3,side=3.1,height=6.6;
- if(game.camera==='cinematic'){back=11.4;side=4.7;height=7.2}
- if(work==='bin'||work==='bulky'){back=7.8;side=8.2;height=6.3}
+ let back=12.2,side=1.4,height=6.7;
+ if(game.camera==='cinematic'){back=13.2;side=2.0;height=7.4}
+ if(work==='bin'||work==='bulky'){back=9.0;side=7.6;height=7.2}
  if(work==='depot'){back=11.9;side=2.5;height=6.2}
  // Portrait displays have a much narrower horizontal field of view.
  if(width>0&&height>0&&width/height<.80){back*=1.65;side=(work==='bin'||work==='bulky')?side*.62:side*.27;height+=3.4}
@@ -1453,7 +1512,7 @@ function cameraRig(){
    let ratio=Math.max(.72,nearest-.10);
    desired[0]=target[0]+(desired[0]-target[0])*ratio;
    desired[2]=target[2]+(desired[2]-target[2])*ratio;
-   desired[1]=Math.max(desired[1],hit.roof+2.2);
+   desired[1]=Math.max(desired[1],hit.roof+3.0);
   }
  }
  // Prevent snap or large lag on turns; always keep the entire truck in frame.
@@ -1471,7 +1530,7 @@ function updateCamera(){
  cameraPos[1]=Math.max(cameraPos[1],6.3);
 }
 let staticWorld=null;function render(){if(!glOK)return;updateCamera();let aspect=canvas.width/canvas.height,view=lookAt(cameraPos,cameraAim),proj=perspective((aspect<.80?76:53)*Math.PI/180,aspect,.25,220),pv=mul(proj,view);pvLast=pv;
-gl.viewport(0,0,canvas.width,canvas.height);gl.clearColor(.69,.83,.91,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(shader);gl.uniformMatrix4fv(glLoc.pv,false,pv);gl.uniform3fv(glLoc.camera,cameraPos);bind(bufStatic);gl.drawArrays(gl.TRIANGLES,0,nStatic);let dyn=drawDynamic(clock),n=upload(bufDynamic,dyn,gl.DYNAMIC_DRAW);bind(bufDynamic);gl.drawArrays(gl.TRIANGLES,0,n)}
+gl.viewport(0,0,canvas.width,canvas.height);gl.clearColor(.72,.83,.88,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.useProgram(shader);gl.uniformMatrix4fv(glLoc.pv,false,pv);gl.uniform3fv(glLoc.camera,cameraPos);bind(bufStatic);gl.drawArrays(gl.TRIANGLES,0,nStatic);let dyn=drawDynamic(clock),n=upload(bufDynamic,dyn,gl.DYNAMIC_DRAW);bind(bufDynamic);gl.drawArrays(gl.TRIANGLES,0,n)}
 // Depth-correct software renderer, used only when WebGL is genuinely unavailable.
 // It uses per-pixel inverse-depth testing and near-plane clipping instead of sorting roofs/roads.
 let softwareCtx=null,staticChunks=[],softScene=null,lastSoft=0,softColorCache=new Map();
@@ -1505,8 +1564,7 @@ function rasterDepth(a,indices,pv,step=1){
  };
  for(let ii=0;ii<indices.length;ii+=step){
   let i=indices[ii],v=[];
-  for(let k=0;k<3;k++){
-   let b=i+k*9,x=a[b],y=a[b+1],z=a[b+2],w=pv[3]*x+pv[7]*y+pv[11]*z+pv[15];
+  for(let k=0;k<3;k++){   let b=i+k*9,x=a[b],y=a[b+1],z=a[b+2],w=pv[3]*x+pv[7]*y+pv[11]*z+pv[15];
    v.push({x,y,z,w});
   }
   if(v.every(q=>q.w<near))continue;
@@ -1519,7 +1577,8 @@ function rasterDepth(a,indices,pv,step=1){
   }
   if(poly.length<3)continue;
   let N=a[i+3],NY=a[i+4],NZ=a[i+5];
-  let lit=Math.min(1.12,.57+.45*Math.max(0,N*(-.4)+NY*.85+NZ*.65));  let R=Math.min(255,Math.round(a[i+6]*255*lit)),G=Math.min(255,Math.round(a[i+7]*255*lit)),B=Math.min(255,Math.round(a[i+8]*255*lit));
+  let lit=Math.min(1.12,.57+.45*Math.max(0,N*(-.4)+NY*.85+NZ*.65));
+  let R=Math.min(255,Math.round(a[i+6]*255*lit)),G=Math.min(255,Math.round(a[i+7]*255*lit)),B=Math.min(255,Math.round(a[i+8]*255*lit));
   let p=poly.map(q=>xform([q.x,q.y,q.z]));
   for(let it=1;it<p.length-1;it++){
    let A=p[0],F=p[it],C=p[it+1];
@@ -1559,7 +1618,7 @@ function renderSoftware(){
  // Background gradient, intentionally matching the GPU sky/fog palette.
  for(let y=0;y<H;y++){
   let q=y/H,r,g,b;
-  if(q<.61){let u=q/.61;r=125+39*u;g=186+36*u;b=218+15*u;}
+  if(q<.61){let u=q/.61;r=133+42*u;g=186+32*u;b=214+13*u;}
   else{let u=Math.min(1,(q-.61)/.39);r=127+12*u;g=187+19*u;b=117+10*u;}
   let i=y*W*4;
   for(let x=0;x<W;x++){buf[i++]=r;buf[i++]=g;buf[i++]=b;buf[i++]=255;}
@@ -1583,6 +1642,7 @@ function frame(now){let dt=Math.min(.066,Math.max(0,(now-last)/1000||.016));last
  requestAnimationFrame(frame)
 }
 function main(){try{let ready=false;try{ready=initGL()}catch(shaderError){console.warn('WebGL initialization failed:',shaderError)}if(!ready)switchToSoftwareRenderer('WebGL unavailable or shaders could not link');resize();window.addEventListener('resize',resize);let m=roadWorld();if(glOK)nStatic=upload(bufStatic,m,gl.STATIC_DRAW);else buildSoftwareChunks(m);load();initLabels();intro();last=performance.now();requestAnimationFrame(frame)}catch(e){console.error('Startup failure',e);$('errorScreen').style.display='block';$('errorScreen').textContent='Game cannot start: '+e.message}}
+window.__rrrCatalog={source:'Kenney Nature Kit CC0',imported:['kenneyFat','kenneySimple'],parts:KENNEY_CC0_TREES,mode:'offline embedded',version:'4.4'};
 window.__rrrDebug={game,cars,keys,closestJob,beginTask,press,update,completeTask,resolveJob,collisionCars,save,drawMap,load,mode:setMode,onRelease,wildlife,people,loaderState,drawDynamic,engineering:{TRUCK,chassisPhysics,updateChassisPhysics,drivePhysics,rigidPoint,rWheel,hydraulicSideLifter,terrainElevation,collisionCarsOBB}};
 main();
 })();
