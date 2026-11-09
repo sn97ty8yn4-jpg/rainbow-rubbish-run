@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {COLLECTION_SECONDS,REFUSE_TRUCK_SPEC,worldToTruck,truckToWorld,checkPickup,samplePickup} from '../src/sideLoaderKinematics.mjs';
+const truck={x:20,z:50,heading:0,speed:0};
+test('correct right-side bin accepted',()=>assert.equal(checkPickup(truck,{x:23.7,z:50.1}).ok,true));
+test('wrong-side bin rejected',()=>assert.equal(checkPickup(truck,{x:16,z:50}).reason,'wrong-side'));
+test('moving truck cannot lift',()=>assert.equal(checkPickup({...truck,speed:2},{x:24,z:50}).reason,'truck-moving'));
+test('far-away bin rejected',()=>assert.equal(checkPickup(truck,{x:26,z:50}).reason,'out-of-reach'));
+test('heading transformation round-trips',()=>{for(const h of [0,Math.PI/4,Math.PI,5.1]){const t={...truck,heading:h},w=truckToWorld(t,{right:3.8,ahead:-.6}),p=worldToTruck(t,w);assert.ok(Math.abs(p.right-3.8)<1e-10);assert.ok(Math.abs(p.ahead+.6)<1e-10);}});
+test('initial reach starts with open jaws',()=>{const p=samplePickup(0,{right:4,ahead:0});assert.equal(p.phase,'extend');assert.equal(p.jaws,0);});
+test('bin remains clamped while inverted',()=>{const p=samplePickup(6.9,{right:4,ahead:0});assert.equal(p.phase,'tip');assert.equal(p.hasBin,true);assert.equal(p.jaws,1);assert.ok(p.tilt>2);});
+test('gripper returns to identical kerb x and z',()=>{const p=samplePickup(10.5,{right:4.2,ahead:.7});assert.equal(p.phase,'release');assert.equal(p.x,4.2);assert.equal(p.z,.7);});
+test('cycle ends after 11.2 seconds',()=>{assert.equal(samplePickup(COLLECTION_SECONDS,{right:4,ahead:0}).phase,'stow');});
+test('truck scale is realistic for residential streets',()=>{assert.equal(REFUSE_TRUCK_SPEC.w,2.45);assert.equal(REFUSE_TRUCK_SPEC.l,7.75);});
