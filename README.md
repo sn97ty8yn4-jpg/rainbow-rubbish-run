@@ -1,30 +1,26 @@
-# Rainbow Rubbish Run — Hydraulic Realism v4.3
+# Rainbow Rubbish Run — Urban Visuals v4.4
 
-A standalone offline garbage-truck game for Felix, Nora and Ferg, featuring three personalised Australian refuse trucks, a detailed suburban town, four-bin educational rubbish sorting and a reference-guided side-loader.
+A standalone Australian rubbish-truck adventure for **Felix, Nora and Ferg**, designed for children aged roughly 3–5. All collection mini-games use pictorial sorting into food waste, recycling, green waste and general rubbish.
 
 ## Play
-Open `index.html` in a modern desktop or mobile browser.
+Open `index.html` in Chrome, Safari or Edge. This is a **single-file, offline build** with no external runtime assets, network requirement or paid plugin.
 
-- **↑** drive; **↓** brake/reverse; **←/→** steer.
-- **SPACE** to start a job and sort each item.
-- Park stopped with the bin on the **right side of the truck**, inside the green parking guide. The lifter refuses to grab a bin it cannot physically reach.
-- Following correct sorting, watch the complete ~11.2-second grab, draw-in, lift, tipping, shaking, righting, lowering and release.
+- ↑ accelerate, ↓ brake/reverse, ← / → steer, SPACE to start jobs and place each pictured item in a bin.
+- Three player-specific garbage truck body colours and automatic turn-taking.
+- Physically coupled kinematic side-loader, no chassis movement during bin pickup, depot unloading and repeating shifts.
 
-## Main additions in v4.3
-- A single coherent clamp/bin reference frame: the lid, wheels, jaws and bin remain rigidly attached during the lift.
-- Physically plausible mechanism order with fixed guide rail, lateral telescopic extension, changing hydraulic-cylinder lengths and over-centre inversion.
-- Exact return to the pickup coordinates before release, without moving the truck chassis to fake alignment.
-- Reach/side validation and a subtle parking target; an inaccessible bin cannot start collection.
-- Replaces the old duplicate/detached visual arm while retaining the GLB-derived truck bodies and six wheels.
-- Every mini-game still centres on food waste, recycling, green waste and general rubbish, with stickers and individually saved progress.
-- 24 jobs per shift, alternating turns among Felix, Nora and Ferg, with continuing shifts and depot unloading.
+## v4.4 urban visuals
+- Imported two genuine CC0 Kenney tree GLBs as small triangle subsets, stored inline for offline use.
+- Warm directional light, procedural road/grass microvariation and atmospheric haze in the WebGL shader.
+- More variety in roadside details without filling street corridors.
+- Tighter, more centred chase camera.
+- **No new assets are loaded from the internet at runtime.**
 
-## Engineering reference and limitations
-See [the reference study](docs/HYDRAULIC_REFERENCE_v4_3.md). Manufacturer tutorials, demonstrations, technical descriptions and photographs were consulted; direct playback of external videos was not available in the test environment.
+## Validation
+Automated Chromium tests: **96/96 scripted jobs** across four shifts, 59 bin collections, 32 turns per child, no JavaScript exceptions. Static world geometry fell from 166,838 to 159,620 triangles. Software-only Chromium sample: 14.8 FPS before, 15.7 FPS after (not a device performance guarantee).
 
-**This remains a stylised kinematic simulation, not a pressure/flow-solvable hydraulic or Rapier rigid-body physics model.** The software renderer has been browser-tested; GPU performance and real-world mobile play remain unverified.
+The test script teleports to many stops for deterministic validation; it is not a fully manually driven route test. GPU WebGL lighting and real iPhone performance still need on-device testing.
 
-## Regression
-81 kinematic/contact conditions passed; the actual bin sorting activity progressed through animation and increased the hopper fill without teleportation. 96 scripted jobs across four shifts passed, with 59 bin pickups and 32 turns per child. The 96 jobs were directly positioned for deterministic tests, not manually driven end-to-end.
+This is **not** Rockstar's GTA SA engine or graphical asset set, and still uses simplified vehicle physics and kinematic hydraulics.
 
-The HTML is original and contains no Rockstar assets.
+See [Asset Catalogue & Import Review](docs/ASSET_CATALOGUE_v4_4.md) for verified source and licence details, limits and deferred asset candidates.
